@@ -11,3 +11,6 @@ see https://github.com/marvinpinto/actions/blob/master/.github/workflows/pre-rel
 
 a essayer : https://github.com/rbarazzutti/gitinfo2-latexmk
 (mais ne marhc epas pour l'instant.).
+
+
+Now this should work correctly. 
