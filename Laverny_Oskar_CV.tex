@@ -1,0 +1,129 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% "ModernCV" CV and Cover Letter
+% LaTeX Template
+% Version 1.3 (29/10/16)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Xavier Danaux (xdanaux@gmail.com) with modifications by:
+% Vel (vel@latextemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Important note:
+% This template requires the moderncv.cls and .sty files to be in the same 
+% directory as this .tex file. These files provide the resume style and themes 
+% used for structuring the document.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\documentclass[10pt,a4paper,sans]{moderncv} % Font sizes: 10, 11, or 12; paper sizes: a4paper, letterpaper, a5paper, legalpaper, executivepaper or landscape; font families: sans or roman
+\moderncvstyle{classic} % CV theme - options include: 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{blue} % CV color - options include: 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+\usepackage[local,mark]{gitinfo2}
+\usepackage[scale=0.90]{geometry} % Reduce document margins
+\input{bib/bibcounters.tex}
+%\setlength{\hintscolumnwidth}{3cm} % Uncomment to change the width of the dates column
+%\setlength{\makecvtitlenamewidth}{10cm} % For the 'classic' style, uncomment to adjust the width of the space allocated to your name
+
+%----------------------------------------------------------------------------------------
+%	NAME AND CONTACT INFORMATION SECTION
+%----------------------------------------------------------------------------------------
+\firstname{Oskar} % Your first name
+\familyname{Laverny} % Your last name
+% All information in this block is optional, comment out any lines you don't need
+\title{PhD in Statistics}
+\address{Institut Camille Jordan}{Lyon, France}
+\mobile{(+33) 777 838 406}
+% \phone{(000) 111 1112}
+% \fax{(000) 111 1113}
+\email{oskar.laverny@univ-lyon1.fr}
+\homepage{www.actuarial.science}{www.actuarial.science} % The first argument is the url for the clickable link, the second argument is the url displayed in the template - this allows special characters to be displayed such as the tilde in this example
+\extrainfo{Build date: \today}
+\photo[120pt][0pt]{pictures/photo} % The first bracket is the picture height, the second is the thickness of the frame around the picture (0pt for no frame)
+\quote{"What would be the dependence structure between quality of code and quantity of coffee ?"}
+%----------------------------------------------------------------------------------------
+
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Cover letter; 
+
+% To remove the cover letter, comment out this entire block: 
+
+% \clearpage
+
+% \recipient{HR Department}{Corporation\\123 Pleasant Lane\\12345 City, State} % Letter recipient
+% \date{\today} % Letter date
+% \opening{Dear Sir or Madam,} % Opening greeting
+% \closing{Sincerely yours,} % Closing phrase
+% \enclosure[Attached]{curriculum vit\ae{}} % List of enclosed documents
+
+% \makelettertitle % Print letter title
+
+% \lipsum[1-2] % Dummy text
+% \lipsum[4] % Dummy text
+
+% \makeletterclosing % Print letter signature
+
+% \newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makecvtitle % Print the CV title
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Employment}
+\cventry{2019--2022}{PhD Student}{Institut Camille Jordan, University Claude Bernard Lyon 1 and SCOR SE}{Lyon}{}{}
+\cventry{2021--2022}{Lecturer}{Ecole Normale Supérieure}{Lyon}{}{}
+\cventry{2020--2022}{Teaching assistant}{Institut Camille Jordan, University Claude Bernard Lyon 1}{Lyon}{}{}
+\cventry{2017--2018}{Actuarial Analyst}{L'auxilliaire - www.auxiliaire.fr}{Lyon}{}{Master Thesis: Stochastic reserving in decennial insurance through generalized linear models.}
+\cventry{2016}{Internship}{Diacrisis - www.les-crises.fr}{}{}{Financial and economical analysis.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Education}
+\cventry{2019--2022}{PhD In Statistics}{Institut Camille Jordan, University Claude Bernard Lyon 1 and SCOR SE}{Lyon \& Paris}{}{Thesis supervised by V. Maume-Deschamps, E. Masiello and D. Rullière, under a CIFRE grant in partnership with SCOR SE. Subject : "Dependence structures and risk agregation in high dimensions". \emph{Planned defence in June 2022}.}
+\cventry{2018--2019}{Master 2 research in probability}{Ecole Normale Supérieure}{Lyon}{Auditing}{}
+\cventry{2015--2018}{Bachelor, Master and DU in Actuarial sciences}{Institut de Sciences Financières et d'Assurances}{Lyon}{}{Mathematics applied to insurance and finance.}
+\cventry{2012--2015}{Bachelor in Mathematics}{Université de Strasbourg}{Strasbourg}{}{}
+% \cventry{2012}{Scientific Baccalauréat}{Académie de Toulouse}{Toulouse}{}{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Teaching Activities}
+\cventry{Fall 2021}{Lecturer}{Eco. Dep. ENS Lyon}{Lyon}{}{Statistical Inference, 36h lectures, 3rd year bachelor in economics.}
+\cventry{Fall 2020 \& Fall 2021}{Teaching Assistant}{Math. Dep. Univ Lyon 1}{Lyon}{}{Probability and Statistics, 2$\times$30h tutorials, 2nd year bachelor in computer sciences.}
+\cventry{Fall 2020}{Teaching Assistant}{Math. Dep. Univ Lyon 1}{Lyon}{}{Probability and Statistics, 30h tutorials, 3rd year bachelor in mathematics.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Research Activities}
+% One \ENxxxx per bib/xxx.bib file. everything else is automatic. 
+\ENwip
+\ENtoappear
+\ENarticles
+\ENinvitedtalks
+\ENcontributedtalks
+\ENpackages
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Others}
+\subsection{Languages}
+\cvitemwithcomment{Native}{Français}{Mother tongue}
+\cvitemwithcomment{Advanced}{English}{Written \& oral}
+\cvitemwithcomment{Intermediate}{Esperanto}{Not practiced often}
+\cvitemwithcomment{Beginner}{Deutsch}{Basic words and phrases only}
+\cvitemwithcomment{Fluent}{C++}{Written only}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Computer skills}
+\cvitem{Day to Day}{Julia, C++, R, Python, \LaTeX, git}
+\cvitem{Casual}{Sh, Vba, HTML/CSS/JS/PHP/SQL}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Interests}
+\cvitem{}{Free software, GNU/Linux, Violin making}
+
+\end{document}

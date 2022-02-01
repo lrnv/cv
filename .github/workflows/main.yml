@@ -1,0 +1,41 @@
+---
+name: "Release CV"
+
+on:
+  push:
+    branches:
+      - "master"
+
+jobs:
+  release_cv:
+    name: "Release CV"
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout master
+      uses: actions/checkout@v1
+    - name: Run bibliography management
+      run: |
+        bash ./bib/makebibs.sh
+    - name: Setup perl
+      uses: shogo82148/actions-setup-perl@v1
+      id: set-matrix
+    - name: Run perl script
+      shell: perl {0}
+      run: |
+        do './perl/gitinfo2.pm';
+    - name: Compile CV
+      uses: xu-cheng/latex-action@master
+      with:
+        root_file: Laverny_Oskar_CV.tex
+    - name: Check pdf file
+      run: |
+        file Laverny_Oskar_CV.pdf | grep -q ' PDF '
+    - name: "Upload"
+      uses: "marvinpinto/action-automatic-releases@latest"
+      with:
+        repo_token: "${{ secrets.GITHUB_TOKEN }}"
+        automatic_release_tag: "latest"
+        prerelease: true
+        title: "Build"
+        files: |
+          Laverny_Oskar_CV.pdf

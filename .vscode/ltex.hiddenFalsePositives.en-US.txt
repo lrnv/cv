@@ -1,0 +1,1 @@
+{"rule":"PHRASE","sentence":"^\\QFrançais Mothertongue English Advanced Written & oral are fluent Deutsch Begginer Basic words and phrases only Esperanto Intermediate Not practiced often\\E$"}
