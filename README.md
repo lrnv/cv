@@ -6,9 +6,11 @@ https://github.com/lrnv/cv/releases/download/latest/Laverny_Oskar_CV.pdf
 
 Features: 
 - The modernCV template was manually modified to feat my needs.
-- the plainurlrev;bst file was also manually modified 
+- Especially automatic formating of references 'correctly'. 
+- the plainurlrev.bst file was also manually modified 
 - The bib management and counting of references is automatic, ran through github action
 - The gitinfo2 script is also ran directly from github actions. 
+- The github action releases the pdf file for everyone to look at: the link is always updated.
 
 Some sources that inspired me : 
 - https://github.com/Qkessler/cv for evenutally making automatic releases of the cv. 
