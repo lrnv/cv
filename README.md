@@ -1,16 +1,27 @@
-# My CV 
+## Output link
 
-After making modifications to the CV, 
+https://github.com/lrnv/cv/releases/download/latest/Laverny_Oskar_CV.pdf
 
-do not forget to COPY the cv to docs/Laverny_Oskar_CV.pdf, as this is the file that is linked everywhere else. 
+## An automatic CV with latex, github actions, gitinfo, moderncv & everything you might need. 
+
+Features: 
+- The modernCV template was manually modified to feat my needs.
+- the plainurlrev;bst file was also manually modified 
+- The bib management and counting of references is automatic, ran through github action
+- The gitinfo2 script is also ran directly from github actions. 
+
+Some sources that inspired me : 
+- https://github.com/Qkessler/cv for evenutally making automatic releases of the cv. 
+- https://github.com/marvinpinto/actions/blob/master/.github/workflows/pre-release.yml also
+- https://github.com/rbarazzutti/gitinfo2-latexmk
+
+## Workflow
+
+- You may add another `bib/*.bib` file that would constitute another section in the publications lists, with automatic ocunting of references. In this case **do not forget to add the `\EN*` macro in the main tex file**
+- You may add more bib entries in the bib folder, or move some around
+- You may change the content of the main file, or any file
+- Just commit, push to github and it will run the workflow to produce the result
+- get your result there : https://github.com/lrnv/cv/releases/download/latest/Laverny_Oskar_CV.pdf
 
 
-see https://github.com/Qkessler/cv for evenutally making automatic releases of the cv. 
-see https://github.com/marvinpinto/actions/blob/master/.github/workflows/pre-release.yml also
-
-
-a essayer : https://github.com/rbarazzutti/gitinfo2-latexmk
-(mais ne marhc epas pour l'instant.).
-
-
-Now this should work correctly. 
+You are free to check out the code and take it for yourself if you want, no problem. 
