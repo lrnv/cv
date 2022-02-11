@@ -1,3 +1,8 @@
+%%%%%%%%%%%% Personal modifications of the bst file, inspired by : 
+%%% https://tex.stackexchange.com/a/85983/166579
+%%% https://github.com/jberger/Curriculum_Vita/blob/master/plainyr-rev.bst
+
+
 %%% Modification of BibTeX style file /usr/local/texlive/2019/texmf-dist/bibtex/bst/base/plain.bst
 %%% ... by urlbst, version 0.8 (marked with "% urlbst")
 %%% See <http://purl.org/nxg/dist/urlbst>
@@ -252,6 +257,24 @@ FUNCTION {output.check}
   if$
 }
 
+%%%%%%%%%%%%%%%%%%%%%%% CVITEM MODIFICATIONS
+FUNCTION {format.date}
+{ year empty$
+    { month empty$
+        { "" }
+        { "there's a month but no year in " cite$ * warning$
+          month
+        }
+      if$
+    }
+    { month empty$
+        'year
+        { month " " * year * }
+      if$
+    }
+  if$
+}
+
 STRINGS {oldyear}
 
 FUNCTION {year.or.none}
@@ -266,11 +289,11 @@ FUNCTION {year.or.none}
     if$
 }
 
-
 FUNCTION {output.bibitem.original} % urlbst (renamed from output.bibitem, so it can be wrapped below)
 { newline$
   "\cvitem{" write$
-  year year.or.none write$
+  format.date year.or.none write$
+  % year.or.none write$
   "}" write$
   newline$
   "{" write$
@@ -284,6 +307,8 @@ FUNCTION {fin.entry.original} % urlbst (renamed from fin.entry, so it can be wra
   newline$
   "}" write$
 }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% END MODIFICATIONS 
+
 
 FUNCTION {new.block}
 { output.state before.all =
@@ -450,22 +475,7 @@ FUNCTION {n.dashify}
   while$
 }
 
-FUNCTION {format.date}
-{ year empty$
-    { month empty$
-        { "" }
-        { "there's a month but no year in " cite$ * warning$
-          month
-        }
-      if$
-    }
-    { month empty$
-        'year
-        { month " " * year * }
-      if$
-    }
-  if$
-}
+
 
 FUNCTION {format.btitle}
 { title emphasize
@@ -893,7 +903,7 @@ FUNCTION {webpage}
   new.block
   year empty$
     'skip$
-    { format.date "year" output.check }
+    % { format.date "year" output.check }
   if$
   % We don't need to output the URL details ('lastchecked' and 'url'),
   % because fin.entry does that for us, using output.web.refs.  The only
@@ -916,7 +926,7 @@ FUNCTION {article}
   crossref missing$
     { journal emphasize "journal" output.check
       possibly.setup.inlinelink format.vol.num.pages output% urlbst
-      format.date "year" output.check
+      % format.date "year" output.check
     }
     { format.article.crossref output.nonnull
       format.pages output
@@ -954,7 +964,7 @@ FUNCTION {book}
     }
   if$
   format.edition output
-  format.date "year" output.check
+  % format.date "year" output.check
   new.block
   note output
   fin.entry
@@ -969,7 +979,7 @@ FUNCTION {booklet}
   howpublished address new.block.checkb
   howpublished output
   address output
-  format.date output
+  % format.date output
   new.block
   note output
   fin.entry
@@ -1004,7 +1014,7 @@ FUNCTION {inbook}
     }
   if$
   format.edition output
-  format.date "year" output.check
+  % format.date "year" output.check
   new.block
   note output
   fin.entry
@@ -1026,7 +1036,7 @@ FUNCTION {incollection}
       publisher "publisher" output.check
       address output
       format.edition output
-      format.date "year" output.check
+      % format.date "year" output.check
     }
     { format.incoll.inproc.crossref output.nonnull
       format.chapter.pages output
@@ -1053,10 +1063,10 @@ FUNCTION {inproceedings}
         { organization publisher new.sentence.checkb
           organization output
           publisher output
-          format.date "year" output.check
+          % format.date "year" output.check
         }
         { address output.nonnull
-          format.date "year" output.check
+          % format.date "year" output.check
           new.sentence
           organization output
           publisher output
@@ -1103,7 +1113,7 @@ FUNCTION {manual}
     }
   if$
   format.edition output
-  format.date output
+  % format.date output
   new.block
   note output
   fin.entry
@@ -1119,7 +1129,7 @@ FUNCTION {mastersthesis}
   "Master's thesis" format.thesis.type output.nonnull
   school "school" output.check
   address output
-  format.date "year" output.check
+  % format.date "year" output.check
   new.block
   note output
   fin.entry
@@ -1133,7 +1143,7 @@ FUNCTION {misc}
   format.title output
   howpublished new.block.checka
   howpublished output
-  format.date output
+  % format.date output
   new.block
   note output
   fin.entry
@@ -1150,7 +1160,7 @@ FUNCTION {phdthesis}
   "PhD thesis" format.thesis.type output.nonnull
   school "school" output.check
   address output
-  format.date "year" output.check
+  % format.date "year" output.check
   new.block
   note output
   fin.entry
@@ -1175,10 +1185,10 @@ FUNCTION {proceedings}
         }
       if$
       publisher output
-      format.date "year" output.check
+      % format.date "year" output.check
     }
     { address output.nonnull
-      format.date "year" output.check
+      % format.date "year" output.check
       new.sentence
       editor empty$
         'skip$
@@ -1202,7 +1212,7 @@ FUNCTION {techreport}
   format.tr.number output.nonnull
   institution "institution" output.check
   address output
-  format.date "year" output.check
+  % format.date "year" output.check
   new.block
   note output
   fin.entry
@@ -1216,7 +1226,7 @@ FUNCTION {unpublished}
   format.title "title" output.check
   new.block
   note "note" output.check
-  format.date output
+  % format.date output
   fin.entry
 }
 
@@ -1327,6 +1337,84 @@ FUNCTION {sort.format.names}
   while$
 }
 
+
+FUNCTION {sort.format.month}
+{ 't :=
+  t #1 #3 substring$ "Dec" =
+  t #1 #3 substring$ "dec" =
+  or
+  { "12" }
+    { t #1 #3 substring$ "Nov" =
+      t #1 #3 substring$ "nov" =
+      or
+      { "11" }
+      { t #1 #3 substring$ "Oct" =
+        t #1 #3 substring$ "oct" =
+        or
+        { "10" }
+        { t #1 #3 substring$ "Sep" =
+          t #1 #3 substring$ "sep" =
+          or
+          { "09" }
+          { t #1 #3 substring$ "Aug" =
+            t #1 #3 substring$ "aug" =
+            or
+            { "08" }
+            { t #1 #3 substring$ "Jul" =
+              t #1 #3 substring$ "jul" =
+              or
+              { "07" }
+              { t #1 #3 substring$ "Jun" =
+                t #1 #3 substring$ "jun" =
+                or
+                { "06" }
+                { t #1 #3 substring$ "May" =
+                  t #1 #3 substring$ "may" =
+                  or
+                  { "05" }
+                  { t #1 #3 substring$ "Apr" =
+                    t #1 #3 substring$ "apr" =
+                    or
+                    { "04" }
+                    { t #1 #3 substring$ "Mar" =
+                      t #1 #3 substring$ "mar" =
+                      or
+                      { "03" }
+                      { t #1 #3 substring$ "Feb" =
+                        t #1 #3 substring$ "feb" =
+                        or
+                        { "02" }
+                        { t #1 #3 substring$ "Dec" =
+                          t #1 #3 substring$ "jan" =
+                          or
+                          { "01" }
+                          { "13" } % No month specified
+                        if$
+                        }
+                      if$
+                      }
+                    if$
+                    }
+                  if$
+                  }
+                if$
+                }
+              if$
+              }
+            if$
+            }
+          if$
+          }
+        if$
+        }
+      if$
+      }
+    if$
+    }
+  if$
+ 
+}
+
 FUNCTION {sort.format.title}
 { 't :=
   "A " #2
@@ -1402,33 +1490,120 @@ FUNCTION {editor.organization.sort}
   if$
 }
 
+
+%% Code for reverse sorting
+%% Contributed by Hans Ekkehard Plesser, http://arken.umb.no/~plesser
+
+% Take year, assuming it is four-digit, convert to int, subtract from 9999
+% and return as string on stack. For reverse chronological sorting.
+INTEGERS { pos k res }
+STRINGS { tmpyear }
+FUNCTION {reverse.year}
+{
+ % ensure four digit year
+ year empty$ 
+   { "9999" "missing year in " cite$ * ", using 9999 for sorting" * warning$ }  
+   { year text.length$ #4 = 
+       { year }
+       { "9999" "year not 4-digit in " cite$ * ", using 9999 for sorting" * warning$ }
+     if$
+   }
+ if$
+ 'tmpyear :=
+
+ #0 'res := % will contain year as integer
+
+ #5 'pos := % index into year, we pre-decrement, will enter body with 4..1
+ { pos #1 - 'pos := pos }
+ { 
+   % extract digit at pos, convert to ASCII, subtract 48 -> 0..9, store in k
+   tmpyear pos #1 substring$ chr.to.int$ #48 - 'k :=
+
+   { k duplicate$ #1 - 'k := }
+   {
+     pos #1 = 
+       { res #1000 + 'res := }
+	{
+	  pos #2 =
+	    { res #100 + 'res := }
+	    {
+	      pos #3 =
+		{ res #10 + 'res := }
+		{ res #1 + 'res := }
+	      if$ 
+	    }
+	  if$
+	}
+     if$
+   }
+   while$
+ }
+ while$
+
+ #9999 res - 
+ int.to.str$
+}
+
 FUNCTION {presort}
-{ type$ "book" =
-  type$ "inbook" =
-  or
-    'author.editor.sort
-    { type$ "proceedings" =
-        'editor.organization.sort
-        { type$ "manual" =
-            'author.organization.sort
-            'author.sort
-          if$
-        }
-      if$
-    }
-  if$
+{
+  % sort by reverse year
+  year
   "    "
   *
-  year field.or.null sortify
+  month field.or.null
+  sort.format.month
+  *
+  " "
+  *
+  author field.or.null
+  sort.format.names
   *
   "    "
   *
   title field.or.null
   sort.format.title
   *
+
+  % cite key for definitive disambiguation
+  cite$
+  *
+
+  % limit to maximum sort key length
   #1 entry.max$ substring$
+
   'sort.key$ :=
 }
+
+
+
+
+% FUNCTION {presort}
+% { type$ "book" =
+%   type$ "inbook" =
+%   or
+%     'author.editor.sort
+%     { type$ "proceedings" =
+%         'editor.organization.sort
+%         { type$ "manual" =
+%             'author.organization.sort
+%             'author.sort
+%           if$
+%         }
+%       if$
+%     }
+%   if$
+%   "    "
+%   *
+%   year field.or.null sortify
+%   *
+%   "    "
+%   *
+%   title field.or.null
+%   sort.format.title
+%   *
+%   #1 entry.max$ substring$
+%   'sort.key$ :=
+% }
 
 ITERATE {presort}
 
@@ -1459,11 +1634,14 @@ EXECUTE {initialize.longest.label}
 
 ITERATE {longest.label.pass}
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CVENTRY MODIFICATION
 FUNCTION {begin.bib}
 {
 }
 
 EXECUTE {begin.bib}
+
 
 EXECUTE {init.urlbst.variables} % urlbst
 EXECUTE {init.state.consts}
@@ -1476,3 +1654,4 @@ FUNCTION {end.bib}
 }
 
 EXECUTE {end.bib}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% END MODIFICATIONS
