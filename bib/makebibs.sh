@@ -1,5 +1,9 @@
 #!/bin/bash
-echo "\usepackage{multibib}" > bib/bibcounters.tex
+echo "%%%%%%%%%%%%% This file is produced automatically" > bib/bibcounters.tex
+echo "%%%%%%%%%%%%% Do not modify by hand" >> bib/bibcounters.tex
+echo "%%%%%%%%%%%%% Use the makebibs.sh script instead" >> bib/bibcounters.tex
+echo "" >> bib/bibcounters.tex
+echo "\usepackage{multibib}" >> bib/bibcounters.tex
 echo "\newcites{%" >> bib/bibcounters.tex
 
 i=0

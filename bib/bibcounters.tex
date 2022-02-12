@@ -1,10 +1,14 @@
+%%%%%%%%%%%%% This file is produced automatically
+%%%%%%%%%%%%% Do not modify by hand
+%%%%%%%%%%%%% Use the makebibs.sh script instead
+
 \usepackage{multibib}
 \newcites{%
 articles,%
 contributedtalks,%
 invitedtalks,%
-packages,%
 preprints,%
+softwares,%
 toappear,%
 wip%
 }{%
@@ -37,14 +41,14 @@ wip%
 \bibliographyinvitedtalks{bib/invitedtalks}
 }
 
-\newcommand{\ENpackages}{
-\subsection{Softwares (2)}
-\nocitepackages{*}
-\bibliographystylepackages{plainurlrev}
-\bibliographypackages{bib/packages}
-}
-
 \newcommand{\ENpreprints}{}
+
+\newcommand{\ENsoftwares}{
+\subsection{Softwares (2)}
+\nocitesoftwares{*}
+\bibliographystylesoftwares{plainurlrev}
+\bibliographysoftwares{bib/softwares}
+}
 
 \newcommand{\ENtoappear}{}
 
