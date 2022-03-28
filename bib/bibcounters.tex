@@ -41,7 +41,12 @@ wip%
 \bibliographyinvitedtalks{bib/invitedtalks}
 }
 
-\newcommand{\ENpreprints}{}
+\newcommand{\ENpreprints}{
+\subsection{Preprints (1)}
+\nocitepreprints{*}
+\bibliographystylepreprints{plainurlrev}
+\bibliographypreprints{bib/preprints}
+}
 
 \newcommand{\ENsoftwares}{
 \subsection{Softwares (2)}
@@ -52,10 +57,5 @@ wip%
 
 \newcommand{\ENtoappear}{}
 
-\newcommand{\ENwip}{
-\subsection{Work in progress (1)}
-\nocitewip{*}
-\bibliographystylewip{plainurlrev}
-\bibliographywip{bib/wip}
-}
+\newcommand{\ENwip}{}
 
