@@ -16,11 +16,10 @@ Some sources that inspired me : [1](https://github.com/Qkessler/cv), [2](https:/
 
 ## Workflow
 
-- You may add another `bib/*.bib` file that would constitute another section in the publications lists, with automatic ocunting of references. In this case **do not forget to add the `\EN*` macro in the main tex file**
+- You may add another `bib/*.bib` file that would constitute another section in the publications lists, with automatic counting of references. In this case **do not forget to add the `\EN*` macro in the main tex file**
 - You may add more bib entries in the bib folder, or move some around
 - You may change the content of the main file, or any file
-- Just commit, push to github and it will run the workflow to produce the result
-- get your result there : https://github.com/lrnv/cv/releases/download/latest/Laverny_Oskar_CV.pdf
+- Just commit, push to github and it will run the workflow to produce the result and update the output link.
 
 
-You are free to check out the code and take it for yourself if you want, no problem. 
+You are free to check out the code and take it for yourself if you want.
