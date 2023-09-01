@@ -7,6 +7,7 @@
 articles,%
 contributedtalks,%
 invitedtalks,%
+manuscrit,%
 nonpeerreview,%
 preprints,%
 softwares,%
@@ -20,7 +21,8 @@ wip%
 {Name 5},%
 {Name 6},%
 {Name 7},%
-{Name 8}}
+{Name 8},%
+{Name 9}}
 
 \newcommand{\ENarticles}{
 \subsection{Published articles (3)}
@@ -30,17 +32,24 @@ wip%
 }
 
 \newcommand{\ENcontributedtalks}{
-\subsection{Contributed talks (11)}
+\subsection{Contributed talks (19)}
 \nocitecontributedtalks{*}
 \bibliographystylecontributedtalks{plainurlrev}
 \bibliographycontributedtalks{bib/contributedtalks}
 }
 
 \newcommand{\ENinvitedtalks}{
-\subsection{Invited talks (4)}
+\subsection{Invited talks (5)}
 \nociteinvitedtalks{*}
 \bibliographystyleinvitedtalks{plainurlrev}
 \bibliographyinvitedtalks{bib/invitedtalks}
+}
+
+\newcommand{\ENmanuscrit}{
+\subsection{Thesis Manuscipt (1)}
+\nocitemanuscrit{*}
+\bibliographystylemanuscrit{plainurlrev}
+\bibliographymanuscrit{bib/manuscrit}
 }
 
 \newcommand{\ENnonpeerreview}{
@@ -67,7 +76,7 @@ wip%
 \newcommand{\ENtoappear}{}
 
 \newcommand{\ENwip}{
-\subsection{Work in progress (1)}
+\subsection{Work in progress (2)}
 \nocitewip{*}
 \bibliographystylewip{plainurlrev}
 \bibliographywip{bib/wip}
