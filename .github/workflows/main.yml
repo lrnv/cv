@@ -19,7 +19,7 @@ jobs:
     - name: Run perl script
       shell: perl {0}
       run: |
-        do './gitinfo2.pm';
+        do './perl/gitinfo2.pm';
     - name: Compile CV
       uses: xu-cheng/latex-action@master
       with:
