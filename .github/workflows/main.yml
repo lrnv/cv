@@ -13,16 +13,13 @@ jobs:
     steps:
     - name: Checkout master
       uses: actions/checkout@v1
-    - name: Run bibliography management
-      run: |
-        bash ./bib/makebibs.sh
     - name: Setup perl
       uses: shogo82148/actions-setup-perl@v1
       id: set-matrix
     - name: Run perl script
       shell: perl {0}
       run: |
-        do './perl/gitinfo2.pm';
+        do './gitinfo2.pm';
     - name: Compile CV
       uses: xu-cheng/latex-action@master
       with:

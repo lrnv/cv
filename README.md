@@ -1,4 +1,4 @@
-## Output link
+## Output links
 
 https://github.com/lrnv/cv/releases/download/latest/Laverny_Oskar_CV.pdf
 

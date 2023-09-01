@@ -1,0 +1,346 @@
+% LTeX: enabled=false
+\documentclass[a4paper,11pt]{article} % fonte 11 points, papier a4
+
+\usepackage[french,english]{babel}   
+\usepackage[T1]{fontenc}        
+\usepackage{url}                
+\usepackage[utf8]{inputenc}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{lmodern}
+\usepackage{setspace}
+\usepackage{textcomp}
+\usepackage{amsfonts}
+\usepackage[table,usenames,dvipsnames]{xcolor}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{tikz}
+\usepackage{fancybox}
+\usepackage{colortbl}
+\usepackage[final]{pdfpages}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{ifthen}
+\usepackage{parskip}
+
+\definecolor{Paired-1}{RGB}{31,120,180}
+
+\usepackage[backend=bibtex,style=ieee,sorting=ynt,defernumbers=true]{biblatex}
+
+\DefineBibliographyStrings{english}{
+  url=,
+}
+\addbibresource{publi.bib}
+\DeclareFieldFormat[unpublished]{title}{#1} 
+\usepackage[final]{pdfpages}
+\usepackage{csquotes}
+
+\usepackage[nomessages]{fp}
+
+\newcommand{\myname}{\textbf{O. Laverny}}
+
+\usepackage{hyperref}
+\hypersetup{colorlinks,citecolor=Paired-1, filecolor=Paired-1,linkcolor=black,urlcolor=Paired-1}
+
+% La page
+%#########
+\usepackage{titlesec}
+\usepackage{vmargin}            % redefinir les marges
+\setmarginsrb{2cm}{2cm}{2cm}{1cm}{0cm}{0cm}{0cm}{1cm}
+    
+% Marge gauche, haute, droite, basse; espace entre la marge et le texte ?
+% gauche, en  haut, ? droite, en bas
+
+%%Cleardoublepage
+\makeatletter
+\renewcommand{\cleardoublepage}{
+\clearpage\thispagestyle{empty}
+\if@twoside
+\ifodd\c@page
+\else
+\hbox{}\newpage
+\fi
+\fi
+}
+\makeatother
+
+% Pour laisser de l'espace entre les lignes du tableau
+\newcommand{\HRule}[2]{{\centering\rule{#1}{#2}}}
+
+\definecolor{lightlightblue}{rgb}{0.75,0.85,1}
+\definecolor{lightlightgray}{rgb}{0.93,0.93,0.93}
+\definecolor{lightlightgray2}{rgb}{0.8,0.8,0.8}
+\definecolor{lightlightlightgray}{rgb}{0.98,0.98,0.98}
+
+
+\setlength{\arrayrulewidth}{0.4pt}
+
+\setcounter{tocdepth}{2}
+
+\titleformat{\section}[block]{}{}{1em}
+{
+    \vspace{-1.3cm}
+    \begin{flushleft}
+    \begin{minipage}{\linewidth}
+    \HRule{\linewidth}{0.2mm}\\[5pt]
+    \centering
+    \bf \thesection\quad
+}
+[
+    \HRule{\linewidth}{0.2mm}
+    \end{minipage}
+    \end{flushleft}
+]
+
+% \titleformat{\section}[block]{\Large \sc}{\thesection}{1em}{\centering}
+
+\newcommand{\tabcv}[2]{
+\begin{minipage}[t]{0.12\linewidth}
+\textbf{\footnotesize #1}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.85\linewidth}
+#2
+\end{minipage}
+\vspace{1em}
+}
+
+\renewcommand{\tabcolsep}{0.1cm}
+\renewcommand{\arraystretch}{1}
+
+\definecolor{color0}{rgb}{0,0,0}% black
+\definecolor{color1}{rgb}{0.22,0.45,0.70}% light blue
+\definecolor{color2}{rgb}{0.45,0.45,0.45}% dark grey
+
+\newcommand*{\namefont}{\fontsize{28}{30}\mdseries\upshape}
+\newcommand*{\titlefont}{\LARGE\mdseries\slshape}
+\newcommand*{\websitefont}{\mdseries\slshape}
+\newcommand*{\addressfont}{\small\mdseries\slshape}
+\newcommand*{\quotefont}{\large\slshape}
+
+\newcommand*{\namestyle}[1]{{\namefont\textcolor{color0}{#1}}}
+\newcommand*{\titlestyle}[1]{{\titlefont\textcolor{color2}{#1}}}
+\newcommand*{\addressstyle}[1]{{\addressfont\textcolor{color2}{#1}}}
+
+%###################
+% LTeX: enabled=true
+% lTeX: language=fr
+\begin{document}
+
+\begin{multicols}{2}\raggedright
+\namestyle{Oskar Laverny} \\
+\vspace{0.5cm}
+\titlestyle{Maître de Conférence}\\
+\vspace{0.2cm}
+\titlestyle{Actuaire Qualifié IA}
+\columnbreak
+
+\raggedleft
+\addressstyle{
+Aix-Marseille University\\
+Marseille, France\\
+e-mail : \url{oskar.laverny@univ-amu.com}\\
+tèl : (+33) 777 838 406\\
+28 ans\\
+\url{https://actuarial.science}
+}
+\end{multicols}
+\vspace{0.2cm}
+\section{Activité professionnelle actuelle}\label{subsec:act_pro_actuelle}
+
+\begin{flushleft}
+\tabcv{Depuis 2023}{
+\textbf{Maître de Conférence}, \\ \textit{Aix-Marseille Université, UMR 1252 SESSTIM}, \textit{Marseille, France}\\[0.5em]
+{\footnotesize
+\textbf{$\bullet$ Enseignement} : Statistiques et informatique, M2 Artificial Intelligence for Public Health (AI4PH) et Méthodes Quantitatives et Econométriques pour la Recherche en Santé (MQERS) du SESSTIM\\
+\textbf{$\bullet$ Recherche} : Mes recherches tournent autour des structures de dépendances en grandes dimensions d'un point de vue statistique, théorique comme appliqué: estimation, tests, simulation...
+}
+}
+
+\section{Formation académique}\label{subsec:formation_academique}
+
+\tabcv{2019 - 2022}{
+\textbf{Doctorat en statistiques}, \\ \textit{Université Claude Bernard Lyon 1}, \textit{Institut Camille Jordan}, \textit{Lyon, France}, \\ \textit{SCOR SE, Paris, France}, \textit{}\\[0.5em]
+%\hbox{\phantom{\ \ \ \ }}\begin{minipage}{0.97\linewidth}
+{\footnotesize \textbf{$\bullet\ $Sujet de thèse :} {Structures de dépendance et agrégation des risques}\\
+\textbf{$\bullet\ $Directeurs de thèse:} Esterina Masiello, Véronique Maume-Deschamps et Didier Rullière.\\
+\textbf{$\bullet\ $Mots clefs :} {Structures de dépendances, mesures de Thorin, base de Laguerre, copules, estimation non paramétrique, statistiques en grandes dimensions}\\
+\textbf{$\bullet\ $Date de soutenance :} 30 mai 2022\\
+\textbf{$\bullet$ Financement} : Convention industrielle de Formation par la recherche (CIFRE) entre la SCOR et l'Université Lyon 1.\\
+\textbf{$\bullet\ $Jury :} \\[0.25em]
+\begin{tabular}{llll}
+{Pr.} & {Anne-Laure Fougères}       & {Université Lyon 1} & {Présidente} \\
+{Pr.} & {Fabrizio Durante}          & {Università del Salento} & {Rapporteur} \\
+{Pr.} & {Edward Furman}             & {York University} & {Rapporteur} \\
+{Pr.} & {Fabienne Comte}            & {Université Paris Descartes} & {Examinatrice} \\
+{Pr.} & {Olivier Lopez}             & {Sorbonne Université} & {Examinateur} \\
+{Dr.} & {Esterina Masiello}         & {Université Lyon 1} & {Directrice de thèse} \\
+{Pr.} & {Véronique Maume-Deschamps} & {Université Lyon 1} & {Directrice de thèse} \\
+% {Pr.} & {Didier Rullière}           & {Mines Saint-Étienne} & {Directeur de thèse} \\
+% {Dr.} & {Alessandro Ferriero}       & {SCOR Zurich} & {Encadrant} \\
+% {Mme.} & {Ecaterina Nisipasu}        & {SCOR Paris} & {Encadrante} \\
+\end{tabular}}
+}
+
+\tabcv{2015 - 2018}{
+\textbf{Diplôme d'actuaire}, \textit{ISFA}, \textit{Lyon}\\[0.5em]
+{\footnotesize \textbf{$\bullet$ Sujet de mémoire :} Provisionnement et risque de réserve en assurance construction\\
+\footnotesize \textbf{$\bullet$ Semestre d'échange :} University of Waterloo, Ontario, Canada\\
+\footnotesize \textbf{$\bullet$ Qualification :} Actuaire qualifié de l'IA depuis janvier 2023. 
+}
+}
+
+\tabcv{2012 - 2015}{
+\textbf{Licence de mathématiques}, \textit{Université de Strasbourg}, \textit{Strasbourg}\\[0.5em]
+% {\footnotesize\textbf{$\bullet$ Sp?cialit? :} Mesures Physiques }
+}
+
+\clearpage
+\section{Expériences professionnelles antérieures}
+
+
+% \tabcv{Depuis 2023}{
+% \textbf{Maître de Conférence}, \\ \textit{Aix-Marseille Université, UMR 1252 SESSTIM}, \textit{Marseille, France}\\[0.5em]
+% {\footnotesize
+% % \textbf{$\bullet$ Enseignements} : Statistiques et informatiques\\
+% }
+% }
+
+\tabcv{2022-2023}{
+\textbf{Chercheur Post Doctoral}, \\ \textit{Institut de statistiques, biostatistiques et actuariat}, \textit{Louvain-La-Neuve, Belgique}\\[0.5em]
+{\footnotesize
+% \textbf{$\bullet$ Encadrant} : Philippe Lambert\\
+\textbf{$\bullet$ Thème de recherche} : \'Estimation pénalisée de densités semi-paramétriques.\\
+\textbf{$\bullet$ Financement} : Bourse FNRS dans le cadre de l'ARC "Imperfect Data:
+From Mathematical foundations to Applications in Life sciences" (IMAL).\\
+}
+}
+
+
+\tabcv{\'Eté 2022}{
+\textbf{Chercheur Post-Doctoral}, \textit{York University}, \textit{Toronto, Canada}\\[0.5em]
+{\footnotesize
+% \textbf{$\bullet$ Encadrants} : Edward Furman \& Ida Ferrara\\
+\textbf{$\bullet$ Thème de recherche} : Formalisation d'une théorie de la vulnérabilité et application à des données de sondages relatives au Covid-19. \\
+\textbf{$\bullet$ Durée} : Trois mois\\
+\textbf{$\bullet$ Financement} : Bourse postdoctorale du \textit{Fields Institute}\\
+}
+}
+
+
+\tabcv{2019-2022}{
+\textbf{Doctorant}, \textit{ICJ, Univ Lyon 1 \& SCOR SE}, \textit{Lyon \& Paris}\\[0.5em]
+{\footnotesize
+\textbf{$\bullet$ Thèmes de recherche} : Apport des copules de type patchwork et des convolutions généralisées de lois Gammas en grande dimension à la modélisation et l'estimation des structures de dépendance. \\
+\textbf{$\bullet$ Détails} : Voir Section~\ref{subsec:formation_academique}\\
+}
+}
+
+\tabcv{2021-2022}{
+\textbf{Chargé de cours}, \textit{Département d'économie, École normale supérieure}, \textit{Lyon}\\[0.5em]
+{\footnotesize
+\textbf{$\bullet$ Responsable de l'enseignement du département} : Sophie Hatte\\
+\textbf{$\bullet$ Sujet} : Inférence statistique\\
+}
+}
+
+\tabcv{2020-2022}{
+\textbf{Chargé de TD}, \textit{Département de mathématiques, Université Lyon 1}, \textit{Lyon}\\[0.5em]
+{\footnotesize
+\textbf{$\bullet$ Responsables} : Yoann Dabrowski, Éric Delaygue\\
+\textbf{$\bullet$ Sujet} : Probabilités et statistiques\\
+}
+}
+
+\tabcv{2017-2018}{
+\textbf{Alternant -- Chargé d'étude actuarielles}, \textit{L'Auxiliaire}, \textit{Lyon}\\[0.5em]
+{\footnotesize
+\textbf{$\bullet$ Encadrant} : Maxime Lenfant\\
+\textbf{$\bullet$ Sujet de mémoire} : Provisionnement et risque de réserve en assurance construction\\
+\textbf{$\bullet$ Activités annexes} : Automatisation des outils de provisionnement et d'analyse des risques\\
+}
+}
+
+
+\tabcv{Mai-Août 2016}{
+\textbf{Stagiaire}, \textit{Diacrisis}, \textit{Paris}\\[0.5em]
+{\footnotesize
+\textbf{$\bullet$ Encadrant} : Olivier Beruyer\\
+\textbf{$\bullet$ Sujet} : Automatisation d'analyses économiques et financières\\
+}
+}
+
+\end{flushleft}
+
+
+\section{Langues et langages de programation}
+\tabcv{Langues}{
+\textbf{Français} natif\\ 
+\textbf{Anglais} courant\\ 
+Quelques notions d'\textbf{Allemand} et d'\textbf{Esperanto}.\\
+}
+\tabcv{Langages}{
+C++, Julia, R, Python, \LaTeX, git, bash, VBA, HTML/CSS/JS/PHP/SQL.\\
+}
+
+\clearpage
+\section{Publications et conférences}
+{
+\renewcommand{\refname}{\vspace{-2.5em}}
+
+\nocite{*}
+\begin{itemize}
+
+\item \textbf{Manuscrit de thèse}
+\newrefcontext[labelprefix=M]
+\printbibliography[keyword={thesis},heading=none]
+% \printbibliography[prefixnumbers={M},keyword={thesis}]
+\vspace{2em}
+
+
+\item \textbf{En cours d'écriture}
+\newrefcontext[labelprefix=E]
+\printbibliography[keyword={work_in_progress},heading=none]
+% \printbibliography[prefixnumbers={E},keyword={work_in_progress}]
+\vspace{2em}
+
+\item \textbf{Articles soumis pour publications}
+\newrefcontext[labelprefix=S]
+\printbibliography[keyword={preprint},heading=none]
+% \printbibliography[prefixnumbers={PP},keyword={preprints}]
+\vspace{2em}
+
+\item \textbf{Articles publiés}
+\newrefcontext[labelprefix=A]
+\printbibliography[keyword={article},heading=none]
+% \printbibliography[prefixnumbers={P},keyword={articles}]
+\vspace{2em}
+
+\item \textbf{Articles de vulgarisation (sans revue par les pairs)}
+\newrefcontext[labelprefix=V]
+\printbibliography[keyword={non_peer_reviewed},heading=none]
+% \printbibliography[prefixnumbers={V},keyword={non_peer_reviewed}]
+\vspace{2em}
+
+\item \textbf{Logiciels publiés}
+\newrefcontext[labelprefix=L]
+\printbibliography[keyword={software},heading=none]
+% \printbibliography[prefixnumbers={L},keyword={softwares}]
+\vspace{2em}
+% \clearpage
+\item \textbf{Conférences (invitations)}
+\newrefcontext[labelprefix=I]
+\printbibliography[keyword={invited_talk},heading=none]
+% \printbibliography[prefixnumbers={CI},keyword={invited_talks}]
+\vspace{2em}
+
+\item \textbf{Conférences (contributions)}
+\newrefcontext[labelprefix=C]
+\printbibliography[keyword={contributed_talk},heading=none]
+% \printbibliography[prefixnumbers={CC},keyword={contributed_talks}]
+\vspace{2em}
+
+\end{itemize}
+}
+
+\end{document}

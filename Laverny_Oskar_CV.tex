@@ -1,176 +1,310 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% "ModernCV" CV and Cover Letter
-% LaTeX Template
-% Version 1.3 (29/10/16)
-%
-% This template has been downloaded from:
-% http://www.LaTeXTemplates.com
-%
-% Original author:
-% Xavier Danaux (xdanaux@gmail.com) with modifications by:
-% Vel (vel@latextemplates.com)
-%
-% License:
-% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
-%
-% Important note:
-% This template requires the moderncv.cls and .sty files to be in the same 
-% directory as this .tex file. These files provide the resume style and themes 
-% used for structuring the document.
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%----------------------------------------------------------------------------------------
-%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
-%----------------------------------------------------------------------------------------
-\documentclass[11pt,a4paper,sans]{moderncv} % Font sizes: 10, 11, or 12; paper sizes: a4paper, letterpaper, a5paper, legalpaper, executivepaper or landscape; font families: sans or roman
-\moderncvstyle{classic} % CV theme - options include: 'casual' (default), 'classic', 'oldstyle' and 'banking'
-\moderncvcolor{blue} % CV color - options include: 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
-\usepackage[local,mark]{gitinfo2}
-\usepackage{tabularx}
-\usepackage[scale=0.90]{geometry} % Reduce document margins
-\input{bib/bibcounters.tex}
-%\setlength{\hintscolumnwidth}{3cm} % Uncomment to change the width of the dates column
-%\setlength{\makecvtitlenamewidth}{10cm} % For the 'classic' style, uncomment to adjust the width of the space allocated to your name
+% LTeX: enabled=false
+\documentclass[a4paper,11pt]{article}
+
+\usepackage[english]{babel} 
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[local,mark,raisemark=-0.05\paperheight]{gitinfo2}
+\usepackage{booktabs}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage{lmodern}
+\usepackage{setspace}
+% \usepackage{textcomp}
+\usepackage{amsfonts}
+% \usepackage{fancybox}
+\usepackage{ifthen}
+\usepackage{parskip}
 
 
-\newcommand{\icj}{\href{http://math.univ-lyon1.fr/}{Institut Camille Jordan}}
-\newcommand{\ucbl}{\href{https://www.univ-lyon1.fr/}{University Claude Bernard Lyon 1}}
-\newcommand{\isba}{\href{https://uclouvain.be/en/research-institutes/lidam/isba}{Institut de statistiques, biostatistiques et actuariat}}
-\newcommand{\ucl}{\href{https://uclouvain.be/}{Université Catholique de Louvain}}
-\newcommand{\scor}{\href{https://www.scor.com}{SCOR SE}}
-\newcommand{\ens}{\href{http://www.ens-lyon.fr/}{Ecole Normale Supérieure}}
-\newcommand{\auxiliaire}{\href{http://www.auxiliaire.fr}{L'Auxilliaire}}
-\newcommand{\diacrisis}{\href{https://www.les-crises.fr}{Diacrisis}}
-\newcommand{\isfa}{\href{https://isfa.univ-lyon1.fr/}{Institut de Sciences Financières et d'Assurances}}
-\newcommand{\unistra}{\href{https://www.unistra.fr/}{Université de Strasbourg}}
-\newcommand{\risc}{\href{https://riscyu.org/}{RISC}}
-\newcommand{\uyork}{\href{https://www.yorku.ca/}{York University}}
-\newcommand{\sesstim}{\href{https://sesstim.univ-amu.fr/}{SESSTIM}}
-\newcommand{\amu}{\href{https://univ-amu.fr}{Aix-Marseille Université}}
+%%%%%%%%% Put the number of pages on the right.
+\usepackage{lastpage}
+\makeatletter
+\renewcommand{\@oddfoot}{\hfill \thepage/\pageref*{LastPage}}
+\makeatother
 
-%----------------------------------------------------------------------------------------
-%	NAME AND CONTACT INFORMATION SECTION
-%----------------------------------------------------------------------------------------
-\firstname{Oskar} % Your first name
-\familyname{Laverny} % Your last name
-% All information in this block is optional, comment out any lines you don't need
-\title{Maitre de conférence\\ \newline Actuary (fully qualified)}
-\address{\amu{}}{Marseille, France}
-% \mobile{(+33) 777 838 406}
-% \phone{(000) 111 1112}
-% \fax{(000) 111 1113}
-\email{oskar.laverny@univ-amu.fr}
-\homepage{www.actuarial.science}{www.actuarial.science} % The first argument is the url for the clickable link, the second argument is the url displayed in the template - this allows special characters to be displayed such as the tilde in this example
-\extrainfo{Build date: \today}
-% \photo[120pt][0pt]{pictures/photo} % The first bracket is the picture height, the second is the thickness of the frame around the picture (0pt for no frame)
-\quote{"What would be the dependence structure between quality of code and quantity of coffee ?"}
-%----------------------------------------------------------------------------------------
+%%%%%%%%% Hyperref setup
+\usepackage{hyperref}
+\definecolor{LightBlue}{RGB}{31,120,180}
+\hypersetup{colorlinks,citecolor=LightBlue, filecolor=LightBlue,linkcolor=black,urlcolor=LightBlue}
 
-
-\begin{document}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Cover letter; 
-
-% To remove the cover letter, comment out this entire block: 
-
-% \clearpage
-
-% \recipient{HR Department}{Corporation\\123 Pleasant Lane\\12345 City, State} % Letter recipient
-% \date{\today} % Letter date
-% \opening{Dear Sir or Madam,} % Opening greeting
-% \closing{Sincerely yours,} % Closing phrase
-% \enclosure[Attached]{curriculum vit\ae{}} % List of enclosed documents
-
-% \makelettertitle % Print letter title
-
-% \lipsum[1-2] % Dummy text
-% \lipsum[4] % Dummy text
-
-% \makeletterclosing % Print letter signature
-
-% \newpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\makecvtitle % Print the CV title
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%% bibliography setup. 
+\usepackage[backend=bibtex,style=ieee,sorting=ydnt,defernumbers=true,url=false]{biblatex}
+\addbibresource{publi.bib}
+\AtEveryBibitem{\ifentrytype{unpublished}{\clearname{author}}}
+\DeclareFieldFormat[unpublished]{title}{#1} 
 
 
 
-\section{Employment}
-\cventry{Since 2023}{Maître de conférence \textit{(Assistant professor)}}{\sesstim{}, \amu{}}{Marseille, France}{}{}
-\cventry{2022--2023}{Post-Doctoral researcher}{\isba{}, \ucl{}}{Louvain-la-Neuve, Belgium}{}{}
-\cventry{Summer 2022}{Post-Doctoral researcher}{\risc{}, \uyork{}}{Toronto, Canada}{}{}
-\cventry{2019--2022}{PhD Student}{\icj{}, \ucbl{} and \scor{}}{Lyon \& Paris, France}{}{}
-\cventry{2021--2022}{Lecturer}{\ens{}}{Lyon}{}{}
-\cventry{2020--2022}{Teaching assistant}{\icj{}, \ucbl{}}{Lyon}{}{}
-\cventry{2017--2018}{Actuarial Analyst}{\auxiliaire{}}{Lyon}{}{}
-\cventry{2016}{Statistical Intern}{\diacrisis{}}{Paris}{}{}
+% Definition of the titles and stuff. 
+%#########
+\usepackage{titlesec}
+\usepackage{vmargin}            % to redefine margins.
+\setmarginsrb{2cm}{2cm}{2cm}{1cm}{0cm}{0cm}{0cm}{1cm} % Marge gauche, haute, droite, basse; espace entre la marge et le texte ?
+  % gauche, en  haut, ? droite, en bas
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Education}
-\cventry{2019--2022}{PhD In Statistics}{\icj{}, \ucbl{} and \scor{}}{}{}{
-    {\footnotesize \textbf{Title:} {Dependences structures and risk aggregation}\\
-    \textbf{Advisors:} Esterina Masiello, Véronique Maume-Deschamps and Didier Rullière.\\
-    \textbf{Keywords:} {Dependence structures, Thorin measures, Laguerre basis, copulas, non-parametric estimation, high-dimensional statistics}\\
-    \textbf{Funding:} CIFRE grant between SCOR SE and University Lyon 1.\\
-    \textbf{Earing date:} May the 30th, 2022\\
-    \textbf{Jury :} \\[0.25em]
-    \begin{tabularx}{\textwidth}{XXX}
-    {Pr. Anne-Laure Fougères}       & {Université Lyon 1} & {Présidente} \\
-    {Pr. Fabrizio Durante}          & {Università del Salento} & {Rapporteur} \\
-    {Pr. Edward Furman}             & {York University} & {Rapporteur} \\
-    {Pr. Fabienne Comte}            & {Université Paris Descartes} & {Examinatrice} \\
-    {Pr. Olivier Lopez}             & {Sorbonne Université} & {Examinateur} \\
-    {Dr. Esterina Masiello}         & {Université Lyon 1} & {Directrice de thèse} \\
-    {Pr. Véronique Maume-Deschamps} & {Université Lyon 1} & {Directrice de thèse} \\
-    % {Pr. Didier Rullière}           & {Mines Saint-Étienne} & {Directeur de thèse} \\
-    % {Dr. Alessandro Ferriero}       & {SCOR Zurich} & {Encadrant} \\
-    % {Mme. Ecaterina Nisipasu}        & {SCOR Paris} & {Encadrante} \\
-    \end{tabularx}}
+
+
+% Pour laisser de l'espace entre les lignes du tableau
+\newcommand{\HRule}[2]{{\centering\rule{#1}{#2}}}
+\setlength{\arrayrulewidth}{0.4pt}
+
+% Definition des sections 
+\titleformat{\section}[block]{}{}{1em}
+{
+    \vspace{-1.3cm}
+    \begin{flushleft}
+    \begin{minipage}{\linewidth}
+    \HRule{\linewidth}{0.2mm}\\[5pt]
+    \centering
+    \bf \thesection\quad
 }
-\cventry{2018--2019}{Master 2 research in probability}{\ens{}}{}{Auditing}{}
-\cventry{2015--2018}{Bachelor, Master and DU in Actuarial sciences}{\isfa{}, \ucbl{}, with one semester at the University of Waterloo, Ontario, Canada}{}{Mathematics applied to insurance and finance}{\href{http://www.ressources-actuarielles.net/C12574E200674F5B/0/2B139F22F51AF75FC1258306006E82F2}{Master Thesis: Stochastic reserving in decennial insurance through generalized linear models}}
-\cventry{2012--2015}{Bachelor in Mathematics}{\unistra{}}{}{}{}
+[
+    \HRule{\linewidth}{0.2mm}
+    \end{minipage}
+    \end{flushleft}
+]
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Research}
-% One \ENxxxx per bib/xxx.bib file. everything else is automatic. 
-\ENwip
-\ENpreprints
-\ENtoappear
-\ENarticles
-\ENnonpeerreview
-\ENmanuscrit
-\ENsoftwares
-\ENinvitedtalks
-\ENcontributedtalks
+\newcommand{\tabcv}[2]{
+\begin{minipage}[t]{0.12\linewidth}
+\textbf{\footnotesize #1}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.85\linewidth}
+#2
+\end{minipage}
+\vspace{1em}
+}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Teaching}
-\cventry{2023+}{Maitre de conférence}{SESSTIM, AMU}{Marseille}{}{Statistics and computer sciences, for 2nd year master's students in \href{https://sesstim.univ-amu.fr/fr/master-ai4ph}{Artificial Intelligence for Public Health} and \href{https://sesstim.univ-amu.fr/fr/master-mqers}{Méthodes Quantitatives et Econométriques pour la Recherche en Santé}}
-\cventry{Fall 2021}{Lecturer}{Eco. Dep. ENS Lyon}{Lyon}{}{Statistical Inference, 36h lectures, 3rd year bachelor in economics.}
-\cventry{Falls 2020 \& 2021}{Teaching Assistant}{Math. Dep. Univ Lyon 1}{Lyon}{}{Probability and Statistics, 2$\times$36h tutorials, 2nd year bachelor in computer sciences.}
-\cventry{Fall 2020}{Teaching Assistant}{Math. Dep. Univ Lyon 1}{Lyon}{}{Probability and Statistics, 30h tutorials, 3rd year bachelor in mathematics.}
+\renewcommand{\tabcolsep}{0.1cm}
+\renewcommand{\arraystretch}{1}
+
+\definecolor{color0}{rgb}{0,0,0}% black
+\definecolor{color1}{rgb}{0.22,0.45,0.70}% light blue
+\definecolor{color2}{rgb}{0.45,0.45,0.45}% dark grey
+
+\newcommand*{\namefont}{\fontsize{28}{30}\mdseries\upshape}
+\newcommand*{\titlefont}{\LARGE\mdseries\slshape}
+\newcommand*{\websitefont}{\mdseries\slshape}
+\newcommand*{\addressfont}{\small\mdseries\slshape}
+\newcommand*{\quotefont}{\large\slshape}
+
+\newcommand*{\namestyle}[1]{{\namefont\textcolor{color0}{#1}}}
+\newcommand*{\titlestyle}[1]{{\titlefont\textcolor{color2}{#1}}}
+\newcommand*{\addressstyle}[1]{{\addressfont\textcolor{color2}{#1}}}
+
+%###################
+% LTeX: enabled=true
+% lTeX: language=en
+\begin{document}
+
+\begin{multicols}{2}\raggedright
+\namestyle{Oskar Laverny} \\
+\vspace{0.5cm}
+\titlestyle{Maître de Conférence}\\
+\vspace{0.2cm}
+\titlestyle{Actuaire Qualifié IA}
+\columnbreak
+
+\raggedleft
+\addressstyle{
+Aix-Marseille University\\
+Marseille, France\\
+\url{oskar.laverny@univ-amu.com}\\
+tèl : (+33) 777 838 406\\
+\url{https://actuarial.science}\\
+Build date: \today
+}
+\end{multicols}
+\vspace{0.2cm}
+\section{Current position}\label{subsec:act_pro_actuelle}
+
+\begin{flushleft}
+\tabcv{Depuis 2023}{
+\textbf{Maître de Conférence (Assistant professor)}, \\ \textit{Aix-Marseille Université, UMR 1252 SESSTIM}, \textit{Marseille, France}\\[0.5em]
+{\footnotesize
+\textbf{$\bullet$ Teaching} : Statistics and computer sciences at SESSTIM, in:
+\begin{itemize}
+  \item M2 Artificial Intelligence for Public Health (AI4PH)
+  \item M2 Méthodes Quantitatives et Econométriques pour la Recherche en Santé (MQERS)
+\end{itemize}
+\textbf{$\bullet$ Research} : My researches deal with high-dimensionnal dependence structures from a statistical point of view, both theoritical and applied: estimation, tests, sampling...
+}
+}
+
+\section{Academic training}\label{subsec:formation_academique}
+
+\tabcv{2019 - 2022}{
+\textbf{PhD in statistics}, \\ \textit{Université Claude Bernard Lyon 1}, \textit{Institut Camille Jordan}, \textit{Lyon, France}, \\ \textit{SCOR SE, Paris, France}, \textit{}\\[0.5em]
+%\hbox{\phantom{\ \ \ \ }}\begin{minipage}{0.97\linewidth}
+{\footnotesize \textbf{$\bullet\ $Thesis title:} {Dependences structures and risk aggregation}\\
+\textbf{$\bullet\ $Advisors:} Esterina Masiello, Véronique Maume-Deschamps and Didier Rullière.\\
+\textbf{$\bullet\ $Keywords:} {Dependence structures, Thorin measures, Laguerre basis, copulas, non-parametric estimation, high-dimensional statistics}\\
+\textbf{$\bullet\ $Earing date:} May the 30th, 2022\\
+\textbf{$\bullet$ Funding:} Convention industrielle de formation par la recherche (CIFRE) between SCOR and University Lyon 1.\\
+\textbf{$\bullet\ $Jury :} \\[0.25em]
+\begin{tabular}{llll}
+{Pr.} & {Anne-Laure Fougères}       & {Université Lyon 1} & {Présidente} \\
+{Pr.} & {Fabrizio Durante}          & {Università del Salento} & {Rapporteur} \\
+{Pr.} & {Edward Furman}             & {York University} & {Rapporteur} \\
+{Pr.} & {Fabienne Comte}            & {Université Paris Descartes} & {Examinatrice} \\
+{Pr.} & {Olivier Lopez}             & {Sorbonne Université} & {Examinateur} \\
+{Dr.} & {Esterina Masiello}         & {Université Lyon 1} & {Directrice de thèse} \\
+{Pr.} & {Véronique Maume-Deschamps} & {Université Lyon 1} & {Directrice de thèse} \\
+% {Pr.} & {Didier Rullière}           & {Mines Saint-Étienne} & {Directeur de thèse} \\
+% {Dr.} & {Alessandro Ferriero}       & {SCOR Zurich} & {Encadrant} \\
+% {Mme.} & {Ecaterina Nisipasu}        & {SCOR Paris} & {Encadrante} \\
+\end{tabular}}
+}
+
+\tabcv{2015 - 2018}{
+\textbf{Diplôme d'actuaire}, \textit{ISFA}, \textit{Lyon}\\[0.5em]
+{\footnotesize \textbf{$\bullet$ Actuarial memoir title:} Provisionnement et risque de réserve en assurance construction\\
+\footnotesize \textbf{$\bullet$ Exchange semester:} University of Waterloo, Ontario, Canada\\
+\footnotesize \textbf{$\bullet$ Qualification:} Fully qualified actuary of the French Actuarial Institute since 2023. 
+}
+}
+
+\tabcv{2012 - 2015}{
+\textbf{Bachelor in Mathematics}, \textit{Université de Strasbourg}, \textit{Strasbourg}\\[0.5em]
+}
+
+\clearpage
+\section{Past positions}
+
+\tabcv{2022-2023}{
+\textbf{Post-doctoral researcher}, \\ \textit{Institut de statistiques, biostatistiques et actuariat}, \textit{Louvain-La-Neuve, Belgique}\\[0.5em]
+{\footnotesize
+\textbf{$\bullet$ Research subject}: Penalised semi-parametric density estimation.\\
+\textbf{$\bullet$ Funding} : FNRS grant for the ARC "Imperfect Data:
+From Mathematical foundations to Applications in Life sciences" (IMAL).\\
+}
+}
 
 
+\tabcv{Summer 2022}{
+\textbf{Post-doctoral researcher}, \textit{York University}, \textit{Toronto, Canada}\\[0.5em]
+{\footnotesize
+% \textbf{$\bullet$ Encadrants} : Edward Furman \& Ida Ferrara\\
+\textbf{$\bullet$ Research subject} : Formalisation d'une théorie de la vulnérabilité et application à des données de sondages relatives au Covid-19. \\
+\textbf{$\bullet$ Length} : Three months\\
+\textbf{$\bullet$ Funding} : Postodctoral grant from the \textit{Fields Institute}\\
+}
+}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Others}
-\subsection{Languages}
-\cvitemwithcomment{Native}{Français}{Mother tongue}
-\cvitemwithcomment{Fluent}{English}{Written \& oral}
-\cvitemwithcomment{Beginner}{Deutsch, Esperanto}{Basic words and sentence only}
-\cvitemwithcomment{Fluent}{C++}{Written only}
+\tabcv{2019-2022}{
+\textbf{PhD}, \textit{ICJ, Univ Lyon 1 \& SCOR SE}, \textit{Lyon \& Paris}\\[0.5em]
+{\footnotesize
+\textbf{$\bullet$ Research subjects} : Contributions of patchwork copulas and high dimensional generalized gamma convolutions to the modeling and estimations of dependence structures. \\
+\textbf{$\bullet$ Details} : See Section~\ref{subsec:formation_academique}\\
+}
+}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Computer skills}
-\cvitem{Day to Day}{Julia, C++, R, Python, \LaTeX, git}
-\cvitem{Casual}{Sh, VBA, HTML/CSS/JS/PHP/SQL}
+\tabcv{2021-2022}{
+\textbf{Lecturer}, \textit{Département d'économie, École normale supérieure}, \textit{Lyon}\\[0.5em]
+{\footnotesize
+\textbf{$\bullet$ Head of teaching dep.} : Sophie Hatte\\
+\textbf{$\bullet$ Subject} : Statistical inference\\
+}
+}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Interests}
-\cvitem{}{Free software, GNU/Linux, Lutherie}
+\tabcv{2020-2022}{
+\textbf{Teaching assistant}, \textit{Département de mathématiques, Université Lyon 1}, \textit{Lyon}\\[0.5em]
+{\footnotesize
+\textbf{$\bullet$ Lecturers} : Yoann Dabrowski, Éric Delaygue\\
+\textbf{$\bullet$ Subjects} : Probabilités et statistiques\\
+}
+}
+
+\tabcv{2017-2018}{
+\textbf{Alternant -- Chargé d'étude actuarielles}, \textit{L'Auxiliaire}, \textit{Lyon}\\[0.5em]
+{\footnotesize
+\textbf{$\bullet$ Supervisor} : Maxime Lenfant\\
+\textbf{$\bullet$ Research subject} : Reserving and reserve risk in french builders insurence.\\
+\textbf{$\bullet$ Other activities} : Implementation of reserving and risk analysis tools.\\
+}
+}
+
+
+\tabcv{Summer 2016}{
+\textbf{Intern}, \textit{Diacrisis}, \textit{Paris}\\[0.5em]
+{\footnotesize
+\textbf{$\bullet$ Supervisor} : Olivier Beruyer\\
+\textbf{$\bullet$ Subject} : Implementation of analysis in economics and finance. \\
+}
+}
+
+\end{flushleft}
+
+
+\section{Languages and programming languages}
+\tabcv{Languages}{
+\textbf{French} native\\ 
+\textbf{English} fluent\\ 
+A few notions of \textbf{German} and \textbf{Esperanto}.\\
+}
+\tabcv{Programming languages}{
+C++, Julia, R, Python, \LaTeX, git, bash, VBA, HTML/CSS/JS/PHP/SQL.\\
+}
+
+\clearpage
+\section{Research outputs}
+{
+\renewcommand{\refname}{\vspace{-2.5em}}
+
+\nocite{*}
+\begin{itemize}
+
+\item \textbf{Thesis manuscript}
+\newrefcontext[labelprefix=M]
+\printbibliography[keyword={thesis},heading=none]
+% \printbibliography[prefixnumbers={M},keyword={thesis}]
+\vspace{2em}
+
+
+\item \textbf{Currently writting}
+\newrefcontext[labelprefix=W]
+\printbibliography[keyword={work_in_progress},heading=none]
+% \printbibliography[prefixnumbers={E},keyword={work_in_progress}]
+\vspace{2em}
+
+\item \textbf{Submitted articles}
+\newrefcontext[labelprefix=S]
+\printbibliography[keyword={preprint},heading=none]
+% \printbibliography[prefixnumbers={PP},keyword={preprints}]
+\vspace{2em}
+
+\item \textbf{Published articles}
+\newrefcontext[labelprefix=P]
+\printbibliography[keyword={article},heading=none]
+% \printbibliography[prefixnumbers={P},keyword={articles}]
+\vspace{2em}
+
+\item \textbf{Non-peer-reviewed articles (vulgarisation)}
+\newrefcontext[labelprefix=V]
+\printbibliography[keyword={non_peer_reviewed},heading=none]
+% \printbibliography[prefixnumbers={V},keyword={non_peer_reviewed}]
+\vspace{2em}
+
+\item \textbf{Published softwares}
+\newrefcontext[labelprefix=L]
+\printbibliography[keyword={software},heading=none]
+% \printbibliography[prefixnumbers={L},keyword={softwares}]
+\vspace{2em}
+% \clearpage
+\item \textbf{Invited talks}
+\newrefcontext[labelprefix=I]
+\printbibliography[keyword={invited_talk},heading=none]
+% \printbibliography[prefixnumbers={CI},keyword={invited_talks}]
+\vspace{2em}
+
+\item \textbf{Contributed talks}
+\newrefcontext[labelprefix=C]
+\printbibliography[keyword={contributed_talk},heading=none]
+% \printbibliography[prefixnumbers={CC},keyword={contributed_talks}]
+\vspace{2em}
+
+\end{itemize}
+}
 
 \end{document}

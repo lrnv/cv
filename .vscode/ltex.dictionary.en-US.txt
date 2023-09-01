@@ -1,9 +1,2 @@
-Deutsch
-Thorin
-Laverny
-Institut
-Masiello
-Rullière
-CIFRE
-Maume-Deschamps
-Diacrisis
+finanicères
+mathématiques
