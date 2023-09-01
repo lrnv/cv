@@ -2,23 +2,20 @@
 
 https://github.com/lrnv/cv/releases/download/latest/Laverny_Oskar_CV.pdf
 
-## An automatic CV with latex, github actions, gitinfo2, moderncv, automatic counting of multibib references, etc...
+## An automatic CV with latex, github actions, gitinfo2, etc... 
 
 Features: 
-- The `modernCV` template was manually modified to feat my needs.
-- Especially automatic formating of references 'correctly'. 
-- the `plainurlrev.bst` file was also manually modified 
-- The bib management and counting of references is automatic, ran through github action
-- The `gitinfo2` script is also ran directly from github actions. 
+- The `modernCV` template was manually modified to feat my needs. ( just ditched it !)
+- Automatic sorting of references into predefined categories. 
+- Automatic `gitinfo2` script run directly from github actions. 
 - The github action releases the pdf file for everyone to look at: the link is always updated.
 
 Some sources that inspired me : [1](https://github.com/Qkessler/cv), [2](https://github.com/marvinpinto/actions/blob/master/.github/workflows/pre-release.yml) and [3](https://github.com/rbarazzutti/gitinfo2-latexmk).
 
 ## Workflow
 
-- You may add another `bib/*.bib` file that would constitute another section in the publications lists, with automatic counting of references. In this case **do not forget to add the `\EN*` macro in the main tex file**
-- You may add more bib entries in the bib folder, or move some around
-- You may change the content of the main file, or any file
+
+- If you add a new keyword in the bib file, add the corresponding bloc in the .tex to output it correctly. 
 - Just commit, push to github and it will run the workflow to produce the result and update the output link.
 
 
