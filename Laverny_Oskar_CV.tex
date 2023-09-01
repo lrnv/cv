@@ -15,6 +15,12 @@
 \usepackage{parskip}
 
 
+%%%%%%%%% Chnage git watermark 
+% Default one : \renewcommand{\gitMark}{\gitBranch\,@\,\gitAbbrevHash{} \textbullet{} Release:\gitReln{} (\gitAuthorDate)\\ Head tags: \gitTags}
+\renewcommand{\gitMark}{\gitBranch\,@\,\gitAbbrevHash{} \textbullet{} Date: \gitAuthorDate}
+\renewcommand{\gitMarkPref}{\href{https://github.com/lrnv/cv}{[git repo]}}
+
+
 %%%%%%%%% Put the number of pages on the right.
 \usepackage{lastpage}
 \makeatletter
