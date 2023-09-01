@@ -26,6 +26,7 @@
 \moderncvstyle{classic} % CV theme - options include: 'casual' (default), 'classic', 'oldstyle' and 'banking'
 \moderncvcolor{blue} % CV color - options include: 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
 \usepackage[local,mark]{gitinfo2}
+\usepackage{tabularx}
 \usepackage[scale=0.90]{geometry} % Reduce document margins
 \input{bib/bibcounters.tex}
 %\setlength{\hintscolumnwidth}{3cm} % Uncomment to change the width of the dates column
@@ -97,7 +98,7 @@
 
 
 \section{Employment}
-\cventry{Since 2023}{Maître de conférence\textit{(Assistant professor)}}{\sesstim{}, \amu{}}{Marseille, France}{}{}
+\cventry{Since 2023}{Maître de conférence \textit{(Assistant professor)}}{\sesstim{}, \amu{}}{Marseille, France}{}{}
 \cventry{2022--2023}{Post-Doctoral researcher}{\isba{}, \ucl{}}{Louvain-la-Neuve, Belgium}{}{}
 \cventry{Summer 2022}{Post-Doctoral researcher}{\risc{}, \uyork{}}{Toronto, Canada}{}{}
 \cventry{2019--2022}{PhD Student}{\icj{}, \ucbl{} and \scor{}}{Lyon \& Paris, France}{}{}
@@ -108,13 +109,32 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Education}
-\cventry{2019--2022}{PhD In Statistics}{\icj{}, \ucbl{} and \scor{}}{}{}{\href{https://www.actuarial.science/files/thesis.pdf}{Thesis supervised by V. Maume-Deschamps, E. Masiello and D. Rullière, under a CIFRE grant in partnership with SCOR SE. Title: "Dependence structures and risk aggregation in high dimensions". \emph{Defended on Mai 30, 2022}.}}
+\cventry{2019--2022}{PhD In Statistics}{\icj{}, \ucbl{} and \scor{}}{}{}{
+    {\footnotesize \textbf{Title:} {Dependences structures and risk aggregation}\\
+    \textbf{Advisors:} Esterina Masiello, Véronique Maume-Deschamps and Didier Rullière.\\
+    \textbf{Keywords:} {Dependence structures, Thorin measures, Laguerre basis, copulas, non-parametric estimation, high-dimensional statistics}\\
+    \textbf{Funding:} CIFRE grant between SCOR SE and University Lyon 1.\\
+    \textbf{Earing date:} May the 30th, 2022\\
+    \textbf{Jury :} \\[0.25em]
+    \begin{tabularx}{\textwidth}{XXX}
+    {Pr. Anne-Laure Fougères}       & {Université Lyon 1} & {Présidente} \\
+    {Pr. Fabrizio Durante}          & {Università del Salento} & {Rapporteur} \\
+    {Pr. Edward Furman}             & {York University} & {Rapporteur} \\
+    {Pr. Fabienne Comte}            & {Université Paris Descartes} & {Examinatrice} \\
+    {Pr. Olivier Lopez}             & {Sorbonne Université} & {Examinateur} \\
+    {Dr. Esterina Masiello}         & {Université Lyon 1} & {Directrice de thèse} \\
+    {Pr. Véronique Maume-Deschamps} & {Université Lyon 1} & {Directrice de thèse} \\
+    % {Pr. Didier Rullière}           & {Mines Saint-Étienne} & {Directeur de thèse} \\
+    % {Dr. Alessandro Ferriero}       & {SCOR Zurich} & {Encadrant} \\
+    % {Mme. Ecaterina Nisipasu}        & {SCOR Paris} & {Encadrante} \\
+    \end{tabularx}}
+}
 \cventry{2018--2019}{Master 2 research in probability}{\ens{}}{}{Auditing}{}
 \cventry{2015--2018}{Bachelor, Master and DU in Actuarial sciences}{\isfa{}, \ucbl{}, with one semester at the University of Waterloo, Ontario, Canada}{}{Mathematics applied to insurance and finance}{\href{http://www.ressources-actuarielles.net/C12574E200674F5B/0/2B139F22F51AF75FC1258306006E82F2}{Master Thesis: Stochastic reserving in decennial insurance through generalized linear models}}
 \cventry{2012--2015}{Bachelor in Mathematics}{\unistra{}}{}{}{}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Research Activities}
+\section{Research}
 % One \ENxxxx per bib/xxx.bib file. everything else is automatic. 
 \ENwip
 \ENpreprints
@@ -127,7 +147,7 @@
 \ENcontributedtalks
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Teaching Activities}
+\section{Teaching}
 \cventry{2023+}{Maitre de conférence}{SESSTIM, AMU}{Marseille}{}{Statistics and computer sciences, for 2nd year master's students in \href{https://sesstim.univ-amu.fr/fr/master-ai4ph}{Artificial Intelligence for Public Health} and \href{https://sesstim.univ-amu.fr/fr/master-mqers}{Méthodes Quantitatives et Econométriques pour la Recherche en Santé}}
 \cventry{Fall 2021}{Lecturer}{Eco. Dep. ENS Lyon}{Lyon}{}{Statistical Inference, 36h lectures, 3rd year bachelor in economics.}
 \cventry{Falls 2020 \& 2021}{Teaching Assistant}{Math. Dep. Univ Lyon 1}{Lyon}{}{Probability and Statistics, 2$\times$36h tutorials, 2nd year bachelor in computer sciences.}
