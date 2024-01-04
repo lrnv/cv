@@ -1,6 +1,6 @@
-## Output links
+## Output link
 
-https://github.com/lrnv/cv/releases/download/latest/Laverny_Oskar_CV.pdf
+The permalink for the resume is https://github.com/lrnv/cv/releases/download/latest/Laverny_Oskar_CV.pdf
 
 ## An automatic CV with latex, github actions, gitinfo2, etc... 
 
