@@ -10,7 +10,7 @@ Features:
 - Automatic `gitinfo2` watermark
 - Automatic compolation on Github actions and permalink.
 - 
-Some sources that inspired me : [here](https://github.com/Qkessler/cv), [there](https://github.com/marvinpinto/actions/blob/master/.github/workflows/pre-release.yml) and [there](https://github.com/rbarazzutti/gitinfo2-latexmk).
+Some sources that inspired me : [here](https://github.com/Qkessler/cv), [there](https://github.com/marvinpinto/actions/blob/master/.github/workflows/pre-release.yml) and [there](https://github.com/rbarazzutti/gitinfo2-latexmk). See also [this blog post](https://www.actuarial.science/post/automatic-latex-resume-with-github-action-and-gitinfo2-watermark/) and [this one](https://www.actuarial.science/post/using-git-and-github-for-latex-writting/).
 
 ## Workflow
 
