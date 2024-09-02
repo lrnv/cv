@@ -6,12 +6,12 @@
 \usepackage[utf8]{inputenc}
 \usepackage[local,mark,raisemark=-0.05\paperheight]{gitinfo2}
 \usepackage{lmodern}
+\usepackage{multicol}
 \usepackage{amsfonts}
 \usepackage{ifthen}
 \usepackage{parskip}
 
-
-%%%%%%%%% Chnage git watermark 
+%%%%%%%%% Change git watermark 
 % Default one : \renewcommand{\gitMark}{\gitBranch\,@\,\gitAbbrevHash{} \textbullet{} Release:\gitReln{} (\gitAuthorDate)\\ Head tags: \gitTags}
 \renewcommand{\gitMark}{\gitBranch\,@\,\gitAbbrevHash{} \textbullet{} Date: \gitAuthorDate}
 \renewcommand{\gitMarkPref}{\href{https://github.com/lrnv/cv}{[git repo]}}
@@ -33,20 +33,15 @@
 \addbibresource{publi.bib}
 \AtEveryBibitem{\ifentrytype{unpublished}{\clearname{author}}}
 \DeclareFieldFormat[unpublished]{title}{#1} 
-
-
+\renewcommand{\refname}{\vspace{-2.5em}}
 
 % Definition of the titles and stuff. 
 %#########
 \usepackage{titlesec}
 \usepackage{vmargin}            % to redefine margins.
 \setmarginsrb{2cm}{2cm}{2cm}{1cm}{0cm}{0cm}{0cm}{1cm} % Marge gauche, haute, droite, basse; espace entre la marge et le texte ?
-  % gauche, en  haut, ? droite, en bas
-
-
 
 % Pour laisser de l'espace entre les lignes du tableau
-\newcommand{\HRule}[2]{{\centering\rule{#1}{#2}}}
 \setlength{\arrayrulewidth}{0.4pt}
 
 % Definition des sections 
@@ -55,27 +50,34 @@
     \vspace{-1.3cm}
     \begin{flushleft}
     \begin{minipage}{\linewidth}
-    \HRule{\linewidth}{0.2mm}\\[5pt]
+    \centering\rule{\linewidth}{0.2mm}\\[5pt]
     \centering
     \bf \thesection\quad
 }
 [
-    \HRule{\linewidth}{0.2mm}
+    \centering\rule{\linewidth}{0.2mm}
     \end{minipage}
     \end{flushleft}
 ]
 
-
 % Definition des subsections 
 \titleformat{\subsection}[block]{}{}{1em}
 {
-    \centering
-    \bf \thesubsection\quad
+   \kern-1.25em\bf\thesubsection\quad
+    % \centering\bf\thesubsection\quad % to show the number and center.
 }
 [
 ]
 
 
+\newcommand{\subsectionbib}[3]{
+\subsection{#3}
+\newrefcontext[labelprefix=#1]
+\printbibliography[keyword={#2},heading=none]
+\vspace{1em}
+}
+
+% Commande pour les entrées du CV: 
 \newcommand{\tabcv}[2]{
 \begin{minipage}[t]{0.12\linewidth}
 \textbf{\footnotesize #1}
@@ -281,56 +283,15 @@ C++, Julia, R, Python, \LaTeX, git, bash, VBA, HTML/CSS/JS/PHP/SQL.\\
 \subsection{Event organization}
 \tabcv{July 2024}{\textbf{Member of the organizing comitee of HEARSTAT2024}: 4th Corsican Summer School on Modern Methods in Biostatistics and Epidemiology.}
 
-
-
 \section{Research outputs}
-{
-\renewcommand{\refname}{\vspace{-2.5em}}
-
 \nocite{*}
-\begin{itemize}
-
-\item \textbf{Currently writting}
-\newrefcontext[labelprefix=W]
-\printbibliography[keyword={work_in_progress},heading=none]
-\vspace{2em}
-
-\item \textbf{Submitted articles}
-\newrefcontext[labelprefix=S]
-\printbibliography[keyword={preprint},heading=none]
-\vspace{2em}
-
-\item \textbf{Published articles}
-\newrefcontext[labelprefix=P]
-\printbibliography[keyword={article},heading=none]
-\vspace{2em}
-
-\item \textbf{Non-peer-reviewed articles (vulgarization)}
-\newrefcontext[labelprefix=V]
-\printbibliography[keyword={non_peer_reviewed},heading=none]
-\vspace{2em}
-
-\item \textbf{Open source software packages}
-\newrefcontext[labelprefix=L]
-\printbibliography[keyword={software},heading=none]
-\vspace{2em}
-
-\item \textbf{Thesis manuscript}
-\newrefcontext[labelprefix=M]
-\printbibliography[keyword={thesis},heading=none]
-\vspace{2em}
-
-\item \textbf{Invited talks}
-\newrefcontext[labelprefix=I]
-\printbibliography[keyword={invited_talk},heading=none]
-\vspace{2em}
-
-\item \textbf{Contributed talks}
-\newrefcontext[labelprefix=C]
-\printbibliography[keyword={contributed_talk},heading=none]
-\vspace{2em}
-
-\end{itemize}
-}
+\subsectionbib{W}{work_in_progress}{Currently writting}
+\subsectionbib{S}{preprint}{Submitted articles}
+\subsectionbib{P}{article}{Published articles}
+\subsectionbib{V}{non_peer_reviewed}{Non-peer-reviewed articles (vulgarization)}
+\subsectionbib{L}{software}{Open source software packages}
+\subsectionbib{M}{thesis}{Thesis manuscript}
+\subsectionbib{I}{invited_talk}{Invited talks}
+\subsectionbib{C}{contributed_talk}{Contributed talks}
 
 \end{document}
