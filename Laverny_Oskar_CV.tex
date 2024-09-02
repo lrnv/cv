@@ -16,7 +16,6 @@
 \renewcommand{\gitMark}{\gitBranch\,@\,\gitAbbrevHash{} \textbullet{} Date: \gitAuthorDate}
 \renewcommand{\gitMarkPref}{\href{https://github.com/lrnv/cv}{[git repo]}}
 
-
 %%%%%%%%% Put the number of pages on the right.
 \usepackage{lastpage}
 \makeatletter
@@ -91,19 +90,11 @@
 \renewcommand{\tabcolsep}{0.1cm}
 \renewcommand{\arraystretch}{1}
 
-\definecolor{color0}{rgb}{0,0,0}% black
-\definecolor{color1}{rgb}{0.22,0.45,0.70}% light blue
-\definecolor{color2}{rgb}{0.45,0.45,0.45}% dark grey
+\definecolor{DarkGrey}{rgb}{0.45,0.45,0.45}% dark grey
 
-\newcommand*{\namefont}{\fontsize{28}{30}\mdseries\upshape}
-\newcommand*{\titlefont}{\LARGE\mdseries\slshape}
-\newcommand*{\websitefont}{\mdseries\slshape}
-\newcommand*{\addressfont}{\small\mdseries\slshape}
-\newcommand*{\quotefont}{\large\slshape}
-
-\newcommand*{\namestyle}[1]{{\namefont\textcolor{color0}{#1}}}
-\newcommand*{\titlestyle}[1]{{\titlefont\textcolor{color2}{#1}}}
-\newcommand*{\addressstyle}[1]{{\addressfont\textcolor{color2}{#1}}}
+\newcommand*{\namestyle}[1]{{\fontsize{28}{30}\mdseries\upshape#1}}
+\newcommand*{\titlestyle}[1]{{\LARGE\mdseries\slshape\textcolor{DarkGrey}{#1}}}
+\newcommand*{\addressstyle}[1]{{\small\mdseries\slshape\textcolor{DarkGrey}{#1}}}
 
 %###################
 % LTeX: enabled=true
