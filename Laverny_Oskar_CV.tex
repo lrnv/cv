@@ -33,15 +33,13 @@
 \AtEveryBibitem{\ifentrytype{unpublished}{\clearname{author}}}
 \DeclareFieldFormat[unpublished]{title}{#1} 
 \renewcommand{\refname}{\vspace{-2.5em}}
+% \renewcommand*{\bibfont}{\footnotesize}
 
 % Definition of the titles and stuff. 
-%#########
 \usepackage{titlesec}
 \usepackage{vmargin}            % to redefine margins.
 \setmarginsrb{2cm}{2cm}{2cm}{1cm}{0cm}{0cm}{0cm}{1cm} % Marge gauche, haute, droite, basse; espace entre la marge et le texte ?
-
-% Pour laisser de l'espace entre les lignes du tableau
-\setlength{\arrayrulewidth}{0.4pt}
+\setlength{\arrayrulewidth}{0.4pt}% Pour laisser de l'espace entre les lignes du tableau
 
 % Definition des sections 
 \titleformat{\section}[block]{}{}{1em}
@@ -64,11 +62,9 @@
 {
    \kern-1.25em\bf\thesubsection\quad
     % \centering\bf\thesubsection\quad % to show the number and center.
-}
-[
-]
+}[]
 
-
+% Definitions des subsectionbib.
 \newcommand{\subsectionbib}[3]{
 \subsection{#3}
 \newrefcontext[labelprefix=#1]
@@ -91,16 +87,19 @@
 \renewcommand{\arraystretch}{1}
 
 \definecolor{DarkGrey}{rgb}{0.45,0.45,0.45}% dark grey
-
 \newcommand*{\namestyle}[1]{{\fontsize{28}{30}\mdseries\upshape#1}}
 \newcommand*{\titlestyle}[1]{{\LARGE\mdseries\slshape\textcolor{DarkGrey}{#1}}}
 \newcommand*{\addressstyle}[1]{{\small\mdseries\slshape\textcolor{DarkGrey}{#1}}}
+
+% \newcommand{\bull}[1]{\textbf{$\bullet\ $#1}}
+\newcommand{\bull}[1]{\textbf{#1}}
 
 %###################
 % LTeX: enabled=true
 % lTeX: language=en
 \begin{document}
 
+%%%%%%%% Header
 \begin{multicols}{2}\raggedright
 \namestyle{Oskar Laverny} \\
 \vspace{0.5cm}
@@ -120,59 +119,64 @@ Build date: \today
 }
 \end{multicols}
 \vspace{0.2cm}
+
 \section{Current position}\label{subsec:act_pro_actuelle}
 
-\begin{flushleft}
 \tabcv{Since 2023}{
-\textbf{Maître de Conférences (Assistant professor)},\\ \textit{UMR 1252 SESSTIM, Aix-Marseille Université}, \textit{Marseille, France}\\[0.5em]
+\textbf{Maître de Conférences (Assistant professor)},\\
+\textit{UMR 1252 SESSTIM, Aix-Marseille Université}, \textit{Marseille, France} \\[0.5em]
 {\footnotesize
-\textbf{$\bullet$ Research:} My researches deal with dependence structures from both thoeretical and applied points of view: estimation, tests, sampling, etc. In particular: 
-\begin{itemize}
-  \item High dimensional statistics: sparse dependence structures, copulas \& factor models.
-  \item Actuarial sciences: survival analysis, Non-life reserving, Dependence modeling \& more.
-  \item Biostatistical applications: Relative survival analysis, cancer registries, net survival, etc.
-\end{itemize}
-\textbf{$\bullet$ Teaching:} Statistics and computer sciences at SESSTIM, in M2 Artificial Intelligence for Public Health (AI4PH)  \& M2 Quatitative methods for health research (MQERS), in French and English:
-\begin{itemize}
-  \item Multivariate exploratory methods: PCA, ICA, PLS regression, ANOVA.
-  \item Regression: Linear models, Logistic models, GLM, Mixed effects models.
-  \item Machine learnings: K-means, SVM, Cart, Random forest, Neural nets. 
-  \item Survival analysis: Cox-PH, NA, Kaplan-Meier, Mixed effects.
-  \item Computer science: R, Python.
-\end{itemize}
+  \bull{Research:} My researches deal with dependence structures from both thoeretical and applied points of view: estimation, tests, sampling, etc. In particular: 
+  \begin{itemize}
+    \item High dimensional statistics: sparse dependence structures, copulas \& factor models.
+    \item Actuarial sciences: survival analysis, Non-life reserving, Dependence modeling \& more.
+    \item Biostatistical applications: Relative survival analysis, cancer registries, net survival, etc.
+  \end{itemize}
+  \bull{Teaching:} Statistics and computer sciences at SESSTIM, in M2 Artificial Intelligence for Public Health (AI4PH)  \& M2 Quantitative methods for health research (MQERS), in French and English:
+  \begin{itemize}
+    \item Multivariate exploratory methods: PCA, ICA, PLS regression, ANOVA.
+    \item Regression: Linear models, Logistic models, GLM, Mixed effects models.
+    \item Machine learnings: K-means, SVM, Cart, Random forest, Neural nets. 
+    \item Survival analysis: Cox-PH, NA, Kaplan-Meier, Mixed effects.
+    \item Computer science: R, Python.
+  \end{itemize}
 }
 }
 
 \section{Academic training}\label{subsec:formation_academique}
 
 \tabcv{2019 - 2022}{
-\textbf{PhD in statistics},\\ \textit{Institut Camille Jordan, Université Claude Bernard Lyon 1}, \textit{Lyon, France}, \\ \textit{SCOR SE, Paris, France}, \textit{}\\[0.5em]
-%\hbox{\phantom{\ \ \ \ }}\begin{minipage}{0.97\linewidth}
-{\footnotesize \textbf{$\bullet\ $Thesis title:} {Dependences structures and risk aggregation}\\
-\textbf{$\bullet\ $Advisors:} Esterina Masiello, Véronique Maume-Deschamps and Didier Rullière.\\
-\textbf{$\bullet\ $Keywords:} {Dependence structures, Thorin measures, Laguerre basis, copulas, non-parametric estimation, high-dimensional statistics}\\
-\textbf{$\bullet\ $Earing date:} May the 30th, 2022\\
-\textbf{$\bullet$ Funding:} Convention industrielle de formation par la recherche (CIFRE), SCOR \& Univ. Lyon 1.\\
-\textbf{$\bullet\ $Jury :} \\[0.25em]
-\begin{tabular}{llll}
-{Pr.} & {Anne-Laure Fougères}       & {Université Lyon 1} & {Présidente} \\
-{Pr.} & {Fabrizio Durante}          & {Università del Salento} & {Rapporteur} \\
-{Pr.} & {Edward Furman}             & {York University} & {Rapporteur} \\
-{Pr.} & {Fabienne Comte}            & {Université Paris Descartes} & {Examinatrice} \\
-{Pr.} & {Olivier Lopez}             & {Sorbonne Université} & {Examinateur} \\
-{Dr.} & {Esterina Masiello}         & {Université Lyon 1} & {Directrice de thèse} \\
-{Pr.} & {Véronique Maume-Deschamps} & {Université Lyon 1} & {Directrice de thèse} \\
-% {Pr.} & {Didier Rullière}           & {Mines Saint-Étienne} & {Directeur de thèse} \\
-% {Dr.} & {Alessandro Ferriero}       & {SCOR Zurich} & {Encadrant} \\
-% {Mme.} & {Ecaterina Nisipasu}        & {SCOR Paris} & {Encadrante} \\
-\end{tabular}}
+\textbf{PhD in statistics},\\ 
+\textit{Institut Camille Jordan, Université Claude Bernard Lyon 1}, \textit{Lyon, France}, \\
+\textit{SCOR SE, Paris, France}, \\[0.5em]
+{\footnotesize 
+  \bull{Thesis title:} {Dependences structures and risk aggregation}\\
+  \bull{Advisors:} Esterina Masiello, Véronique Maume-Deschamps and Didier Rullière.\\
+  \bull{Keywords:} {Dependence structures, Thorin measures, Laguerre basis, copulas, non-parametric estimation, high-dimensional statistics}\\
+  \bull{Earing date:} May the 30th, 2022\\
+  \bull{Funding:} Convention industrielle de formation par la recherche (CIFRE), SCOR \& Univ. Lyon 1.\\
+  \bull{Jury:} \\[0.25em]
+  \begin{tabular}{llll}
+    {Pr.} & {Anne-Laure Fougères}       & {Université Lyon 1} & {Présidente} \\
+    {Pr.} & {Fabrizio Durante}          & {Università del Salento} & {Rapporteur} \\
+    {Pr.} & {Edward Furman}             & {York University} & {Rapporteur} \\
+    {Pr.} & {Fabienne Comte}            & {Université Paris Descartes} & {Examinatrice} \\
+    {Pr.} & {Olivier Lopez}             & {Sorbonne Université} & {Examinateur} \\
+    {Dr.} & {Esterina Masiello}         & {Université Lyon 1} & {Directrice de thèse} \\
+    {Pr.} & {Véronique Maume-Deschamps} & {Université Lyon 1} & {Directrice de thèse} \\
+    % {Pr.} & {Didier Rullière}           & {Mines Saint-Étienne} & {Directeur de thèse} \\
+    % {Dr.} & {Alessandro Ferriero}       & {SCOR Zurich} & {Encadrant} \\
+    % {Mme.} & {Ecaterina Nisipasu}       & {SCOR Paris} & {Encadrante} \\
+  \end{tabular}
+}
 }
 
 \tabcv{2015 - 2018}{
 \textbf{Diplôme d'actuaire}, \textit{ISFA}, \textit{Lyon}\\[0.5em]
-{\footnotesize \textbf{$\bullet$ Actuarial thesis:} Reserving and reserve risk in (french) builder's insurence\\
-\footnotesize \textbf{$\bullet$ Semester abroad:} at University of Waterloo, Ontario, Canada\\
-\footnotesize \textbf{$\bullet$ Qualification:} Fully qualified actuary of the French Actuarial Institute since 2023. 
+{\footnotesize 
+  \bull{Actuarial thesis:} Reserving and reserve risk in (french) builder's insurence\\
+  \bull{Semester abroad:} at University of Waterloo, Ontario, Canada\\
+  \bull{Qualification:} Fully qualified actuary of the French Actuarial Institute since 2023. 
 }
 }
 
@@ -184,12 +188,13 @@ Build date: \today
 \section{Past positions}
 
 \tabcv{2022-2023}{
-\textbf{Post-doctoral researcher}, \\ \textit{Institut de statistiques, biostatistiques et actuariat}, \textit{Louvain-La-Neuve, Belgique}\\[0.5em]
+\textbf{Post-doctoral researcher}, \\
+\textit{Institut de statistiques, biostatistiques et actuariat}, \textit{Louvain-La-Neuve, Belgique}\\[0.5em]
 {\footnotesize
-\textbf{$\bullet$ Research subject:} Penalised semi-parametric density estimation.\\
-\textbf{$\bullet$ Funding:} FNRS grant for the ARC "Imperfect Data:
-From Mathematical foundations to Applications in Life sciences" (IMAL).\\
-\textbf{$\bullet$ Coauthor:} Philippe Lambert.
+  \bull{Research subject:} Penalised semi-parametric density estimation.\\
+  \bull{Funding:} FNRS grant for the ARC "Imperfect Data:
+  From Mathematical foundations to Applications in Life sciences" (IMAL).\\
+  \bull{Coauthor:} Philippe Lambert.
 }
 }
 
@@ -197,11 +202,10 @@ From Mathematical foundations to Applications in Life sciences" (IMAL).\\
 \tabcv{Summer 2022}{
 \textbf{Post-doctoral researcher}, \textit{York University}, \textit{Toronto, Canada}\\[0.5em]
 {\footnotesize
-% \textbf{$\bullet$ Encadrants:} Edward Furman \& Ida Ferrara\\
-\textbf{$\bullet$ Research subject:} Vulnerability theory and application to survey data around COVID-19. \\
-\textbf{$\bullet$ Length:} Three months\\
-\textbf{$\bullet$ Funding:} Postodctoral grant from the \textit{Fields Institute}\\
-\textbf{$\bullet$ Coauthors:} Edward Furman \& Ida Ferara.
+  \bull{Research subject:} Vulnerability theory and application to survey data around COVID-19. \\
+  \bull{Length:} Three months\\
+  \bull{Funding:} Postodctoral grant from the \textit{Fields Institute}\\
+  \bull{Coauthors:} Edward Furman \& Ida Ferara.
 }
 }
 
@@ -209,32 +213,32 @@ From Mathematical foundations to Applications in Life sciences" (IMAL).\\
 \tabcv{2019-2022}{
 \textbf{PhD}, \textit{ICJ, Univ Lyon 1 \& SCOR SE}, \textit{Lyon \& Paris}\\[0.5em]
 {\footnotesize
-\textbf{$\bullet$ Research subjects:} Contributions of patchwork copulas and high dimensional generalized gamma convolutions to the modeling and estimations of dependence structures. See Section~\ref{subsec:formation_academique} for details.
+  \bull{Research subjects:} Contributions of patchwork copulas and high dimensional generalized gamma convolutions to the modeling and estimations of dependence structures. See Section~\ref{subsec:formation_academique} for details.
 }
 }
 
 \tabcv{2021-2022}{
 \textbf{Lecturer}, \textit{Département d'économie, École normale supérieure}, \textit{Lyon}\\[0.5em]
 {\footnotesize
-\textbf{$\bullet$ Head of teaching dep.:} Sophie Hatte\\
-\textbf{$\bullet$ Lecture topic:} Statistical inference, bachelor level.\\
+  \bull{Head of teaching dep.:} Sophie Hatte\\
+  \bull{Lecture topic:} Statistical inference, bachelor level.\\
 }
 }
 
 \tabcv{2020-2022}{
 \textbf{Teaching assistant}, \textit{Département de mathématiques, Université Lyon 1}, \textit{Lyon}\\[0.5em]
 {\footnotesize
-\textbf{$\bullet$ Lecturers:} Yoann Dabrowski, Éric Delaygue\\
-\textbf{$\bullet$ Subjects:} Probabilities and statistics, bachelor level.\\
+  \bull{Lecturers:} Yoann Dabrowski, Éric Delaygue\\
+  \bull{Subjects:} Probabilities and statistics, bachelor level.\\
 }
 }
 
 \tabcv{2017-2018}{
 \textbf{Alternant -- Chargé d'étude actuarielles}, \textit{L'Auxiliaire}, \textit{Lyon}\\[0.5em]
 {\footnotesize
-\textbf{$\bullet$ Supervisor:} Maxime Lenfant\\
-\textbf{$\bullet$ Research subject:} Reserving and reserve risk in (french) builders insurence.\\
-\textbf{$\bullet$ Other activities:} Implementation of reserving and risk analysis tools.\\
+  \bull{Supervisor:} Maxime Lenfant\\
+  \bull{Research subject:} Reserving and reserve risk in (french) builders insurence.\\
+  \bull{Other activities:} Implementation of reserving and risk analysis tools.\\
 }
 }
 
@@ -242,23 +246,18 @@ From Mathematical foundations to Applications in Life sciences" (IMAL).\\
 \tabcv{Summer 2016}{
 \textbf{Intern}, \textit{Diacrisis}, \textit{Paris}\\[0.5em]
 {\footnotesize
-\textbf{$\bullet$ Supervisor:} Olivier Beruyer\\
-\textbf{$\bullet$ Subject:} Implementation of economic and financial analysis. \\
+  \bull{Supervisor:} Olivier Beruyer\\
+  \bull{Subject:} Implementation of economic and financial analysis. \\
 }
 }
 
-\end{flushleft}
-
-% \clearpage
 \section{Languages and programming languages}
 \tabcv{Languages}{
-\textbf{French} native\\ 
-\textbf{English} fluent\\ 
-A few notions of \textbf{German} and \textbf{Esperanto}.\\
+  \textbf{French} native\\ 
+  \textbf{English} fluent\\ 
+  A few notions of \textbf{German} and \textbf{Esperanto}.\\
 }
-\tabcv{Programming languages}{
-C++, Julia, R, Python, \LaTeX, git, bash, VBA, HTML/CSS/JS/PHP/SQL.\\
-}
+\tabcv{Programming languages}{C++, Julia, R, Python, \LaTeX, git, bash, VBA, HTML/CSS/JS/PHP/SQL.}
 
 \section{Responsabilities, fundings and research stays}
 
@@ -266,23 +265,32 @@ C++, Julia, R, Python, \LaTeX, git, bash, VBA, HTML/CSS/JS/PHP/SQL.\\
 \tabcv{Since 2023}{\textbf{Editor} for the {{Journal of Open Source Software}}.}
 
 \subsection{Management}
-\tabcv{Summer 2024}{\textbf{M2 Internship} of Rim Alahjal on "Relative survival analysis in Julia". Currently doing a PhD, CNRS/INRIA, Grenoble.}
+\tabcv{Summer 2024}{\textbf{M2 Internship} of Rim Alahjal\\
+{\footnotesize
+Topic: Relative survival analysis in Julia. Currently doing a PhD, CNRS/INRIA, Grenoble
+}}
 
 \subsection{Research stays}
-\tabcv{June 2024}{\textbf{Invited scholar} at University College London by Dr F. Javier Rubio (one week).}
+\tabcv{June 2024}{\textbf{Invited scholar}\\
+{\footnotesize
+Invited at University College London by Dr F. Javier Rubio (one week).
+}}
 
 \subsection{Event organization}
-\tabcv{July 2024}{\textbf{Member of the organizing comitee of HEARSTAT2024}: 4th Corsican Summer School on Modern Methods in Biostatistics and Epidemiology.}
+\tabcv{July 2024}{\textbf{Member of the organizing comitee of HEARSTAT2024}\\
+{\footnotesize
+4th Corsican Summer School on Modern Methods in Biostatistics and Epidemiology.
+}}
 
 \section{Research outputs}
 \nocite{*}
-\subsectionbib{W}{work_in_progress}{Currently writting}
-\subsectionbib{S}{preprint}{Submitted articles}
-\subsectionbib{P}{article}{Published articles}
+% LTeX: enabled=false
+\subsectionbib{W}{work_in_progress} {Currently writting}
+\subsectionbib{S}{preprint}         {Submitted articles}
+\subsectionbib{P}{article}          {Published articles}
 \subsectionbib{V}{non_peer_reviewed}{Non-peer-reviewed articles (vulgarization)}
-\subsectionbib{L}{software}{Open source software packages}
-\subsectionbib{M}{thesis}{Thesis manuscript}
-\subsectionbib{I}{invited_talk}{Invited talks}
-\subsectionbib{C}{contributed_talk}{Contributed talks}
-
+\subsectionbib{L}{software}         {Open source software packages}
+\subsectionbib{M}{thesis}           {Thesis manuscript}
+\subsectionbib{I}{invited_talk}     {Invited talks}
+\subsectionbib{C}{contributed_talk} {Contributed talks}
 \end{document}
